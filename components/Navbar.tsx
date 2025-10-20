@@ -6,7 +6,11 @@ import styles from "./css/Navbar.module.css";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [subMenuOpen, setSubMenuOpen] = useState(false);
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
+  const toggleSubMenu = () => {
+    setIsSubMenuOpen((prev) => !prev);
+  };
   const closeMenu = () => {
     setMenuOpen(false);
     setSubMenuOpen(false);
@@ -59,10 +63,7 @@ export default function Navbar() {
         </li>
 
         <li className={styles.hasSubMenu}>
-          <button
-            onClick={() => setSubMenuOpen(!subMenuOpen)}
-            className={styles.subMenuButton}
-          >
+          <button onClick={toggleSubMenu} className={styles.subMenuButton}>
             Prestations
             <span
               className={`${styles.arrow} ${
@@ -72,22 +73,23 @@ export default function Navbar() {
               ▼
             </span>
           </button>
-          <ul
-            className={`${styles.subMenu} ${
-              subMenuOpen ? styles.showSubMenu : ""
-            }`}
-          >
-            <li>
-              <Link href="/prestations/psychotherapie" onClick={closeMenu}>
-                Psychothérapie
-              </Link>
-            </li>
-            <li>
-              <Link href="/prestations/preparation-mentale" onClick={closeMenu}>
-                (P)réparation mentale
-              </Link>
-            </li>
-          </ul>
+          {isSubMenuOpen && (
+            <ul className={styles.submenu}>
+              <li>
+                <Link href="/prestations/psychotherapie" onClick={closeMenu}>
+                  Psychothérapie
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/prestations/preparation-mentale"
+                  onClick={closeMenu}
+                >
+                  (P)réparation mentale
+                </Link>
+              </li>
+            </ul>
+          )}
         </li>
 
         <li>
