@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.mapWrapper,
+.formWrapper {
+  flex: 1;
+  min-width: 300px;
+  height: 500px;
+}
+
+.separator {
+  width: 2px;
+  background-color: #ddd;
+  margin: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .mapWrapper,
+  .formWrapper {
+    height: auto;
+  }
+}

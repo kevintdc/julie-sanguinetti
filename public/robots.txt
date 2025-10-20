@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.juliesanguinetti.fr
+
+# Sitemaps
+Sitemap: https://www.juliesanguinetti.fr/sitemap.xml
