@@ -6,8 +6,8 @@ export default function ContactInfoSection() {
   return (
     <section className={styles.container}>
       <div className={styles.heading}>
-        <p>NOUS CONTACTER</p>
-        <h2>OÙ NOUS TROUVER</h2>
+        <p>ME CONTACTER</p>
+        <h2>OÙ ME TROUVER</h2>
         <div className={styles.underline}></div>
       </div>
 
@@ -16,7 +16,7 @@ export default function ContactInfoSection() {
           <FiPhone className={styles.icon} />
           <h3>Téléphone</h3>
           <p>
-            <a href="tel:+33600000000">06 00 00 00 00</a>
+            <a href="tel:+33665914371">06 65 91 43 71</a>
           </p>
         </div>
 
@@ -24,8 +24,8 @@ export default function ContactInfoSection() {
           <FiMail className={styles.icon} />
           <h3>Email</h3>
           <p>
-            <a href="mailto:contact@juliesanguinetti.fr">
-              contact@juliesanguinetti.fr
+            <a href="mailto:cabinet@juliesanguinetti.com">
+              cabinet@juliesanguinetti.com
             </a>
           </p>
         </div>

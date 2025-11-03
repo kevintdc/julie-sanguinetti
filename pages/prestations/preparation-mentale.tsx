@@ -1,29 +1,37 @@
-import CustomHead from "../../components/CustomHead";
+import PrestationPage from "../../components/PrestationPage";
 
 export default function PreparationMentale() {
   return (
-    <>
-      <CustomHead
-        title="(P)réparation mentale | Julie Sanguinetti"
-        description="Optimisez vos performances avec un accompagnement en préparation mentale adapté à vos objectifs."
-      />
-      <main>
-        <h1>(P)réparation mentale</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-          aliquid voluptatum ea necessitatibus enim. Totam nam error accusantium
-          aspernatur corporis unde dolorum mollitia, est earum, nihil et
-          eligendi. Perspiciatis distinctio iure expedita assumenda repellendus
-          similique quo, cum accusantium culpa rerum quaerat voluptate
-          voluptates blanditiis, nobis commodi error hic, veritatis modi quis.
-          Temporibus, minus odio incidunt rem repellendus illo ipsa similique
-          sit saepe qui dolorum inventore explicabo distinctio commodi sunt
-          necessitatibus ab voluptate vitae, quos dicta itaque. Doloremque
-          debitis modi alias fugiat officiis. Commodi laboriosam perferendis
-          optio ad quas odit dicta, suscipit ipsa qui voluptatem, magni fugit
-          cupiditate recusandae, consequuntur ipsam?
-        </p>
-      </main>
-    </>
+    <PrestationPage
+      title="Préparation mentale"
+      description="Préparation mentale pour sportifs, artistes et professionnels exigeants — avec Julie Sanguinetti."
+      heroText="Renforcer votre mental pour performer, gérer le stress, et rester aligné.e avec vos objectifs personnels et professionnels."
+      heroImage={{
+        src: "/images/preparation-mentale-hero.jpg",
+        alt: "Préparation mentale",
+      }}
+      sections={[
+        {
+          title: "Qui est concerné·e ?",
+          content:
+            "Artistes, sportifs, professionnels en transition ou toute personne souhaitant libérer son plein potentiel mental : cette démarche est faite pour vous.",
+        },
+        {
+          title: "Mon accompagnement",
+          content:
+            "Je vous propose des techniques personnalisées pour : gérer la pression, structurer vos pensées, gagner en confiance, et rester focalisé·e. Une approche humaine, dynamique et adaptée.",
+          image: {
+            src: "/images/preparation-mentale-technique.jpg",
+            alt: "Techniques de préparation mentale",
+          },
+        },
+        {
+          title: "Processus & tarifs",
+          content:
+            "Consultation initiale (80 min), suivie d’un accompagnement modulable. Pour connaître les tarifs, contactez‑moi directement.",
+        },
+      ]}
+      cta={{ label: "Me contacter", href: "/contact" }}
+    />
   );
 }

@@ -1,75 +1,66 @@
-import { useState } from "react";
 import styles from "./css/ContactForm.module.css";
 
-export default function ContactForm() {
-  const [status, setStatus] = useState<
-    "idle" | "sending" | "success" | "error"
-  >("idle");
+type Props = {
+  onSubmit: (e: React.FormEvent) => void;
+  status: "idle" | "sending" | "success" | "error";
+};
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("sending");
-
-    const form = e.target as HTMLFormElement;
-    const data = new FormData(form);
-
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      body: data,
-    });
-
-    setStatus(response.ok ? "success" : "error");
-    if (response.ok) form.reset();
-  };
-
+export default function ContactForm({ onSubmit, status }: Props) {
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
-      <label className={styles.label}>
-        Nom :
-        <input type="text" name="name" required className={styles.input} />
-      </label>
+    <form onSubmit={onSubmit} className={styles.form}>
+      <div className={styles.group}>
+        <label htmlFor="name">Nom</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Votre nom"
+          required
+        />
+      </div>
 
-      <label className={styles.label}>
-        Email :
-        <input type="email" name="email" required className={styles.input} />
-      </label>
+      <div className={styles.group}>
+        <label htmlFor="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Votre adresse email"
+          required
+        />
+      </div>
 
-      <label className={styles.label}>
-        Objet :
-        <input type="text" name="objet" required className={styles.input} />
-      </label>
-
-      <label className={styles.label}>
-        Message :
+      <div className={styles.group}>
+        <label htmlFor="message">Message</label>
         <textarea
+          id="message"
           name="message"
           rows={5}
+          placeholder="Votre message"
           required
-          className={styles.textarea}
-        />
-      </label>
+        ></textarea>
+      </div>
 
-      {/* Honeypot anti-spam */}
+      {/* Champ anti-spam invisible */}
       <input
         type="text"
         name="website"
         style={{ display: "none" }}
         tabIndex={-1}
+        autoComplete="off"
       />
 
-      <button
-        type="submit"
-        disabled={status === "sending"}
-        className={styles.button}
-      >
-        {status === "sending" ? "Envoi en cours…" : "Envoyer"}
+      <button type="submit" disabled={status === "sending"}>
+        {status === "sending" ? "Envoi..." : "Envoyer"}
       </button>
 
       {status === "success" && (
-        <p className={styles.success}>Message envoyé !</p>
+        <p className={styles.success}>Message envoyé avec succès !</p>
       )}
       {status === "error" && (
-        <p className={styles.error}>Erreur lors de l’envoi.</p>
+        <p className={styles.error}>
+          Erreur lors de l’envoi. Veuillez réessayer.
+        </p>
       )}
     </form>
   );

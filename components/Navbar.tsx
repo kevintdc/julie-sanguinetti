@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import styles from "./css/Navbar.module.css";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [subMenuOpen, setSubMenuOpen] = useState(false);
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
   const toggleSubMenu = () => {
@@ -13,21 +13,40 @@ export default function Navbar() {
   };
   const closeMenu = () => {
     setMenuOpen(false);
-    setSubMenuOpen(false);
   };
   const [isScrolled, setIsScrolled] = useState(false);
+  const router = useRouter();
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
+    const handleRouteChange = () => {
+      setIsSubMenuOpen(false);
+      setMenuOpen(false); // optionnel : ferme aussi le menu burger
+    };
+    const handleClickOutside = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setIsSubMenuOpen(false);
+      }
+    };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    document.addEventListener("mousedown", handleClickOutside);
+    router.events.on("routeChangeStart", handleRouteChange);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+      router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, [router]);
 
   return (
-    <nav className={`${styles.nav} ${isScrolled ? styles.scrolled : ""}`}>
+    <nav
+      ref={menuRef}
+      className={`${styles.nav} ${isScrolled ? styles.scrolled : ""}`}
+    >
       <div className={styles.logo}>
         <Link href="/" className={styles.logoLink}>
           <Image
@@ -63,18 +82,23 @@ export default function Navbar() {
         </li>
 
         <li className={styles.hasSubMenu}>
-          <button onClick={toggleSubMenu} className={styles.subMenuButton}>
-            Prestations
-            <span
-              className={`${styles.arrow} ${
-                subMenuOpen ? styles.arrowOpen : ""
+          <div className={styles.subMenuWrapper}>
+            <button onClick={toggleSubMenu} className={styles.subMenuButton}>
+              Prestations
+              <span
+                className={`${styles.arrow} ${
+                  isSubMenuOpen ? styles.arrowOpen : ""
+                }`}
+              >
+                ▼
+              </span>
+            </button>
+
+            <ul
+              className={`${styles.subMenu} ${
+                isSubMenuOpen ? styles.showSubMenu : ""
               }`}
             >
-              ▼
-            </span>
-          </button>
-          {isSubMenuOpen && (
-            <ul className={styles.submenu}>
               <li>
                 <Link href="/prestations/psychotherapie" onClick={closeMenu}>
                   Psychothérapie
@@ -89,7 +113,7 @@ export default function Navbar() {
                 </Link>
               </li>
             </ul>
-          )}
+          </div>
         </li>
 
         <li>

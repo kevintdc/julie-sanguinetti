@@ -1,7 +1,12 @@
 import styles from "./css/ContactMapAndForm.module.css";
-import ContactForm from "./ContactForm"; // Tu dois déjà avoir ce composant
+import ContactForm from "./ContactForm";
 
-export default function ContactMapAndForm() {
+type Props = {
+  onSubmit: (e: React.FormEvent) => void;
+  status: "idle" | "sending" | "success" | "error";
+};
+
+export default function ContactMapAndForm({ onSubmit, status }: Props) {
   return (
     <section className={styles.wrapper}>
       <div className={styles.mapWrapper}>
@@ -19,7 +24,7 @@ export default function ContactMapAndForm() {
       <div className={styles.separator}></div>
 
       <div className={styles.formWrapper}>
-        <ContactForm />
+        <ContactForm onSubmit={onSubmit} status={status} />
       </div>
     </section>
   );

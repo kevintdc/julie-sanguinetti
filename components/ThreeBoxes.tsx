@@ -5,16 +5,16 @@ export default function ThreeBoxes() {
   return (
     <section className={styles.container}>
       <div className={styles.box}>
-        <Image src="/logo1.svg" alt="Logo 1" width={50} height={50} />
-        <p>Texte associé au premier élément</p>
+        <Image src="/images/logo1.jpg" alt="Logo 1" width={50} height={50} />
+        <p>Psychothérapie & Accompagnement personnel</p>
       </div>
       <div className={styles.box}>
-        <Image src="/logo2.svg" alt="Logo 2" width={50} height={50} />
-        <p>Texte associé au second élément</p>
+        <Image src="/images/logo2.png" alt="Logo 2" width={50} height={50} />
+        <p>Préparation mentale & Performance</p>
       </div>
       <div className={styles.box}>
-        <Image src="/logo3.svg" alt="Logo 3" width={50} height={50} />
-        <p>Texte associé au troisième élément</p>
+        <Image src="/images/logo3.jpg" alt="Logo 3" width={50} height={50} />
+        <p>Autres prestations personnalisées</p>
       </div>
     </section>
   );

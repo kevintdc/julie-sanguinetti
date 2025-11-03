@@ -5,11 +5,14 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <p>
-        &copy; {new Date().getFullYear()} Julie Sanguinetti. Tous droits
-        réservés.
-      </p>
-      <div className={styles.socials}>
+      <div className={styles.footerSection}>
+        <p>
+          &copy; {new Date().getFullYear()} Julie Sanguinetti. Tous droits
+          réservés.
+        </p>
+      </div>
+
+      <div className={`${styles.footerSection} ${styles.socials}`}>
         <a
           href="https://www.instagram.com/julie.sanguinetti/"
           target="_blank"
@@ -50,10 +53,15 @@ export default function Footer() {
           />
         </a>
       </div>
-      <Link href="/mentions-legales">Mentions légales</Link>
-      <a href="#top" className={styles.link}>
-        Retour en haut ↑
-      </a>
+
+      <div className={`${styles.footerSection} ${styles.links}`}>
+        <Link href="/mentions-legales" className={styles.link}>
+          Mentions légales
+        </Link>
+        <a href="#top" className={styles.link}>
+          Retour en haut ↑
+        </a>
+      </div>
     </footer>
   );
 }
