@@ -4,41 +4,46 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import styles from "./css/Navbar.module.css";
 
+type SubMenuKey = "accompagnements" | "ressources" | null;
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
-
-  const toggleSubMenu = () => {
-    setIsSubMenuOpen((prev) => !prev);
-  };
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
+  const [openSubMenu, setOpenSubMenu] = useState<SubMenuKey>(null); // ✅ un seul état, mais ciblé
   const [isScrolled, setIsScrolled] = useState(false);
   const router = useRouter();
   const menuRef = useRef<HTMLDivElement>(null);
 
+  const toggleSubMenu = (key: Exclude<SubMenuKey, null>) => {
+    setOpenSubMenu((prev) => (prev === key ? null : key));
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setOpenSubMenu(null);
+  };
+
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+
+    const handleRouteChangeStart = () => {
+      setOpenSubMenu(null);
+      setMenuOpen(false);
     };
-    const handleRouteChange = () => {
-      setIsSubMenuOpen(false);
-      setMenuOpen(false); // optionnel : ferme aussi le menu burger
-    };
+
     const handleClickOutside = (e: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setIsSubMenuOpen(false);
+        setOpenSubMenu(null);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
     document.addEventListener("mousedown", handleClickOutside);
-    router.events.on("routeChangeStart", handleRouteChange);
+    router.events.on("routeChangeStart", handleRouteChangeStart);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("mousedown", handleClickOutside);
-      router.events.off("routeChangeStart", handleRouteChange);
+      router.events.off("routeChangeStart", handleRouteChangeStart);
     };
   }, [router]);
 
@@ -61,33 +66,44 @@ export default function Navbar() {
 
       <button
         className={styles.burger}
-        onClick={() => setMenuOpen(!menuOpen)}
+        onClick={() => setMenuOpen((o) => !o)}
         aria-label="Menu"
+        aria-expanded={menuOpen}
+        aria-controls="primary-navigation"
       >
         <span className={menuOpen ? styles.burgerOpen : ""} />
         <span className={menuOpen ? styles.burgerOpen : ""} />
         <span className={menuOpen ? styles.burgerOpen : ""} />
       </button>
 
-      <ul className={`${styles.navList} ${menuOpen ? styles.showMenu : ""}`}>
+      <ul
+        id="primary-navigation"
+        className={`${styles.navList} ${menuOpen ? styles.showMenu : ""}`}
+      >
         <li>
           <Link href="/" onClick={closeMenu}>
             Accueil
           </Link>
         </li>
         <li>
-          <Link href="/qui-suis-je" onClick={closeMenu}>
-            Qui suis-je
+          <Link href="/apropos" onClick={closeMenu}>
+            À propos
           </Link>
         </li>
 
+        {/* ---- Sous-menu Accompagnements ---- */}
         <li className={styles.hasSubMenu}>
           <div className={styles.subMenuWrapper}>
-            <button onClick={toggleSubMenu} className={styles.subMenuButton}>
-              Prestations
+            <button
+              onClick={() => toggleSubMenu("accompagnements")}
+              className={styles.subMenuButton}
+              aria-expanded={openSubMenu === "accompagnements"}
+              aria-controls="submenu-accompagnements"
+            >
+              Accompagnements
               <span
                 className={`${styles.arrow} ${
-                  isSubMenuOpen ? styles.arrowOpen : ""
+                  openSubMenu === "accompagnements" ? styles.arrowOpen : ""
                 }`}
               >
                 ▼
@@ -95,8 +111,9 @@ export default function Navbar() {
             </button>
 
             <ul
+              id="submenu-accompagnements"
               className={`${styles.subMenu} ${
-                isSubMenuOpen ? styles.showSubMenu : ""
+                openSubMenu === "accompagnements" ? styles.showSubMenu : ""
               }`}
             >
               <li>
@@ -109,7 +126,25 @@ export default function Navbar() {
                   href="/prestations/preparation-mentale"
                   onClick={closeMenu}
                 >
-                  (P)réparation mentale
+                  Préparation mentale
+                </Link>
+              </li>
+              <li>
+                <Link href="/prestations/ateliers" onClick={closeMenu}>
+                  Ateliers
+                </Link>
+              </li>
+              <li>
+                <Link href="/prestations/entreprises" onClick={closeMenu}>
+                  Entreprises
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/prestations/conferences-formations"
+                  onClick={closeMenu}
+                >
+                  Conférences & Formations
                 </Link>
               </li>
             </ul>
@@ -117,10 +152,21 @@ export default function Navbar() {
         </li>
 
         <li>
-          <Link href="/services" onClick={closeMenu}>
-            Services
+          <Link href="/infos-pratiques" onClick={closeMenu}>
+            Infos pratiques
           </Link>
         </li>
+        <li>
+          <Link href="/faq" onClick={closeMenu}>
+            F.A.Q.
+          </Link>
+        </li>
+        <li>
+          <Link href="/ressources" onClick={closeMenu}>
+            Ressources
+          </Link>
+        </li>
+
         <li>
           <Link href="/contact" onClick={closeMenu}>
             Contact

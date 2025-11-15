@@ -36,7 +36,7 @@
 .navList li a {
   text-decoration: none;
   color: #a24941;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 1rem;
   transition: color 0.2s ease;
 }
@@ -87,7 +87,7 @@
   font: inherit;
   cursor: pointer;
   color: #a24941;
-  font-weight: 500;
+  font-weight: 700;
   padding: 0;
   font-size: 1rem;
   display: flex;

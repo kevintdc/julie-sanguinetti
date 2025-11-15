@@ -1,9 +1,9 @@
-import PrestationPage from "../components/PrestationPage";
+import PrestationPage from "../../components/PrestationPage";
 
 export default function Services() {
   return (
     <PrestationPage
-      title="Services complémentaires"
+      title="Témoignages"
       description="Ateliers, accompagnements spécifiques, interventions ponctuelles — découvrez les autres services proposés par Julie Sanguinetti."
       heroText="Julie vous propose des accompagnements sur mesure, en dehors du cadre traditionnel de la psychothérapie ou de la préparation mentale."
       heroImage={{

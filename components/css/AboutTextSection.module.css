@@ -1,24 +1,68 @@
-.section {
-  padding: 4rem 2rem;
-  max-width: 80%;
+.container {
+  max-width: 900px;
   margin: 0 auto;
-  text-align: justify;
-  line-height: 1.6;
-  background-color: #fafafa;
-}
-
-.heading {
-  text-align: center;
-  font-size: 1.6rem;
-  color: #a24a3b;
-  margin-bottom: 2rem;
-}
-
-.text {
-  font-size: 1rem;
+  padding: 2rem 1rem;
   color: #333;
+  font-family: "Glikker", sans-serif;
+}
+.paragraph {
+  text-align: justify;
+}
+.hero {
+  background: url("/images/portrait‑julie.jpg") center/cover no-repeat;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
+.heroContent {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+.section {
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  color: #a24941;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  margin-bottom: 1rem;
+}
+
+.list {
+  list-style: disc inside;
+  margin-left: 1rem;
+}
+
+.list li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  .hero {
+    height: 40vh;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+  }
+}
 .button {
   display: flex;
   align-items: center;
@@ -43,10 +87,6 @@
   display: flex;
   justify-content: center;
   margin-top: 1rem;
-}
-.icon {
-  display: inline-flex;
-  transition: transform 0.3s ease;
 }
 
 /* 🚀 Animation au hover */

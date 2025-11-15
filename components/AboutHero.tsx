@@ -13,7 +13,10 @@ export default function AboutHero() {
           className={styles.profileImage}
         />
       </div>
-      <h1 className={styles.title}>Julie Sanguinetti</h1>
+      <h1 className={styles.title}>Hello ! Moi c&apos;est Julie !</h1>
+      <h2 className={styles.subtitle}>
+        Je travaille dans la tête des gens — mais avec leur accord, promis.
+      </h2>
     </section>
   );
 }

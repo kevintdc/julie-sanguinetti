@@ -24,8 +24,8 @@ export default function ContactInfoSection() {
           <FiMail className={styles.icon} />
           <h3>Email</h3>
           <p>
-            <a href="mailto:cabinet@juliesanguinetti.com">
-              cabinet@juliesanguinetti.com
+            <a href="mailto:juliesanguinetti.pnl@gmail.com">
+              juliesanguinetti.pnl@gmail.com
             </a>
           </p>
         </div>

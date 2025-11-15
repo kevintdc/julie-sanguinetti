@@ -29,7 +29,7 @@ export default function AlternatingParagraphs() {
         className={`${styles.block} ${styles.reverse}`}
       >
         <div className={styles.text}>
-          <h2>{"{P}réparation mentale"}</h2>
+          <h2>{"Préparation mentale"}</h2>
           <p>
             Pour les artistes, sportifs ou professionnels : développez vos
             capacités mentales dans les moments clés…
