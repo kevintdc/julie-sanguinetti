@@ -48,17 +48,16 @@ export default function AboutTextSection() {
                 Maître‑Praticienne certifiée RNCP en Programmation Neuro
                 Linguistique
               </strong>
-              , formée par
-              <strong>Michel Rolion</strong>, auteur, enseignant et formateur
-              reconnu, passionné de langage et de l’humain. Sa pédagogie,
-              exigeante et bienveillante, m’a appris à manier la précision de la
-              PNL sans jamais perdre la profondeur du lien. Et formée également
-              par <strong>Fabien Martinet</strong>, praticien en hypnose,
-              formateur PNL & hypnose et formateur en entreprise pour une
-              communication bienveillante. Véritable pédagogue du lien humain,
-              il m’a appris à manier l’art du langage métaphorique, et à faire
-              de la parole un espace de liberté entre rire et émotions. Il est
-              aujourd’hui l’un de mes superviseurs.
+              , formée par <strong>Michel Rolion</strong>, auteur, enseignant et
+              formateur reconnu, passionné de langage et de l’humain. Sa
+              pédagogie, exigeante et bienveillante, m’a appris à manier la
+              précision de la PNL sans jamais perdre la profondeur du lien. Et
+              formée également par <strong>Fabien Martinet</strong>, praticien
+              en hypnose, formateur PNL & hypnose et formateur en entreprise
+              pour une communication bienveillante. Véritable pédagogue du lien
+              humain, il m’a appris à manier l’art du langage métaphorique, et à
+              faire de la parole un espace de liberté entre rire et émotions. Il
+              est aujourd’hui l’un de mes superviseurs.
             </li>
             <li>
               <strong>Formée à la psychopathologie clinique</strong> par Bruno
@@ -106,7 +105,7 @@ export default function AboutTextSection() {
             Je viens d’une famille à la frontière entre le chaos et la comédie —
             disons qu’on est plutôt version Shameless que téléfilm du dimanche.
             Alors oui, <strong>on ne devient pas thérapeute par hasard…</strong>{" "}
-            Je n’aime pas
+            Je n’aime pas{" "}
             <strong>
               l’injustice, les betteraves, la haine et la désinformation.
             </strong>{" "}
@@ -150,9 +149,8 @@ export default function AboutTextSection() {
           </p>
           <p className={styles.paragraph}>
             La psychothérapie pour <strong>réparer,</strong> la préparation
-            mentale pour
-            <strong>préparer.</strong> Le tout en cherchant à faire émerger ce
-            qu’il y a déjà de vivant et de solide en vous.
+            mentale pour <strong>préparer.</strong> Le tout en cherchant à faire
+            émerger ce qu’il y a déjà de vivant et de solide en vous.
           </p>
           <p className={styles.paragraph}>
             Dans mon accompagnement, j’adopte une approche intégrative,

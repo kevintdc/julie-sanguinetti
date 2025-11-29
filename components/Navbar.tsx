@@ -130,7 +130,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link href="/prestations/ateliers" onClick={closeMenu}>
+                <Link href="/prestations/atelier" onClick={closeMenu}>
                   Ateliers
                 </Link>
               </li>

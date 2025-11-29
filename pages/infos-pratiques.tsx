@@ -4,41 +4,98 @@ export default function Services() {
   return (
     <PrestationPage
       title="Infos pratiques"
-      description="Ateliers, accompagnements spécifiques, interventions ponctuelles — découvrez les autres services proposés par Julie Sanguinetti."
-      heroText="Julie vous propose des accompagnements sur mesure, en dehors du cadre traditionnel de la psychothérapie ou de la préparation mentale."
+      description="Services complémentaires avec Julie Sanguinetti — interventions ponctuelles, accompagnements spécifiques et collaborations."
+      heroText=""
       heroImage={{
         src: "/images/services-hero.jpg",
         alt: "Services complémentaires",
       }}
       sections={[
         {
-          title: "Interventions ponctuelles",
-          content:
-            "Conférences, ateliers de groupe, sensibilisation en entreprise ou milieu scolaire. Julie intervient autour de thèmes comme la gestion des émotions, le stress, la communication ou la préparation mentale.",
-        },
-        {
-          title: "Accompagnements spécifiques",
+          title: "Pour me trouver",
           content: (
             <>
-              <p>Julie propose aussi un accompagnement pour :</p>
-              <ul>
-                <li>Parents en difficulté relationnelle avec leurs enfants</li>
-                <li>Jeunes adultes en période de transition</li>
-                <li>
-                  Personnes en questionnement identitaire ou professionnel
-                </li>
-              </ul>
+              <p>
+                Les séances se déroulent dans mon cabinet, un lieu pensé pour
+                que l’on s’y sente bien, en confiance, sans chichi.
+                <strong>Adresse :</strong> 4, route de Ginestas, 11 120
+                MIREPEISSET Facile d’accès, avec stationnement à proximité{" "}
+                <em>
+                  (accès PMR, toilettes, café si vous êtes sympa, parking à
+                  proximité)
+                </em>
+              </p>
+
+              <br />
+              <p>
+                Pour celles et ceux qui préfèrent choisir leur environnement,
+                comme chez vous par exemple (ou qui vivent plus loin), les
+                séances peuvent aussi se faire <strong>en visio</strong>, dans
+                les mêmes conditions de qualité et de confidentialité. (Si si je
+                vous assure, c’est bien vous avec moi et pas vous avec votre
+                ordi !)
+              </p>
             </>
           ),
-          image: {
-            src: "/images/services-accompagnement.jpg",
-            alt: "Accompagnement personnalisé",
-          },
         },
         {
-          title: "Collaborations",
+          title: "Horaires",
+          content: (
+            <>
+              <p>
+                Je vous reçois sur rendez-vous uniquement, du lundi au vendredi
+                de 9H à 17H.{" "}
+              </p>
+              <br />
+              <p>
+                ➡ Prise de rendez-vous par téléphone, mail ou via le formulaire
+                de contact.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: "Tarifs et règlements",
           content:
-            "Professionnel·le du soin, du sport ou du développement personnel ? Julie est ouverte aux projets communs ou relais d'accompagnement.",
+            "Les tarifs sont consultables dans les prestations définies et sont non assujettis à la TVA, (TVA non applicable de l’art. 293B du CGI). Le règlement se fait sur place à la fin de chaque prestation en espèces ou par virement). Il n’y a pas de distributeur automatique dans le village, vous en trouverez cependant facilement à Ginestas, Argeliers, Saint Marcel d’Aude et autres villages aux alentours. Les séances ne sont pas prises en charge par la Sécurité sociale, mais certaines mutuelles remboursent une partie du montant. N’hésitez pas à vous renseigner auprès de la votre.",
+        },
+        {
+          title: "Confidentialité et cadre",
+          content: (
+            <>
+              <p>
+                Tout ce qui se dit au cabinet <strong>reste au cabinet</strong>.
+                Si toutefois pour des raisons éthiques, une tierce personne
+                devrait être informée de certains points, nous en discuterons
+                ensemble. Le cadre est bienveillant, sans jugement, et
+                totalement confidentiel. Mon rôle : vous aider à mettre de la
+                clarté, du mouvement et du sens dans ce que vous vivez.
+              </p>
+              <br />
+              <p>
+                <strong>Attention :</strong> mes accompagnements sont des
+                pratiques complémentaires à d’autres, et se différencie très
+                largement du domaine de la médecine. Ma pratique ne se substitue
+                pas à l’avis et la consultation de professionnels de la santé et
+                n’est pas de nature à guérir des maladies. Aucun diagnostic ne
+                sera établi, et le cas échéant, une réorientation vers un
+                professionnel spécialisé et accrédité vous sera proposé. Si un
+                traitement est déjà en place, il est impératif de poursuivre
+                attentivement sa continuité, de continuer votre parcours de soin
+                et les rendez vous avec les autres professionnels.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: "Annulation / report",
+          content:
+            "La vie est parfois pleine d’imprévus — je le sais bien. Il est simplement demandé de prévenir au moins 24h à l’avance pour toute annulation ou report de séance, afin que ce créneau puisse être proposé à quelqu’un d’autre. Tout comme vous j’ai aussi j’ai une vie personnelle, et cela m’aiderait aussi a prendre des créneaux perso. Passé ce délais, la consultation sera due à hauteur de 50% du prix annoncé.",
+        },
+        {
+          title: "Et sinon ?",
+          content:
+            "Ici, pas de baguette magique (malheureusement ), mais un espace où vous pouvez vous poser, vous comprendre, performer, et repartir un peu plus léger·ère, plus clair·e, plus fort·e. C’est déjà beaucoup.",
         },
       ]}
       cta={{ label: "Prendre contact", href: "/contact" }}

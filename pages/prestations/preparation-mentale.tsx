@@ -1,37 +1,290 @@
 import PrestationPage from "../../components/PrestationPage";
-
+import CardsSection from "../../components/CardsSection";
+import styles from "../../styles/Prestation.module.css";
 export default function PreparationMentale() {
   return (
-    <PrestationPage
-      title="Préparation mentale"
-      description="Préparation mentale pour sportifs, artistes et professionnels exigeants — avec Julie Sanguinetti."
-      heroText="Renforcer votre mental pour performer, gérer le stress, et rester aligné.e avec vos objectifs personnels et professionnels."
-      heroImage={{
-        src: "/images/preparation-mentale-hero.jpg",
-        alt: "Préparation mentale",
-      }}
-      sections={[
-        {
-          title: "Qui est concerné·e ?",
-          content:
-            "Artistes, sportifs, professionnels en transition ou toute personne souhaitant libérer son plein potentiel mental : cette démarche est faite pour vous.",
-        },
-        {
-          title: "Mon accompagnement",
-          content:
-            "Je vous propose des techniques personnalisées pour : gérer la pression, structurer vos pensées, gagner en confiance, et rester focalisé·e. Une approche humaine, dynamique et adaptée.",
-          image: {
-            src: "/images/preparation-mentale-technique.jpg",
-            alt: "Techniques de préparation mentale",
+    <>
+      <PrestationPage
+        title="Préparation mentale"
+        description="Préparation mentale pour sportifs, artistes et professionnels exigeants — avec Julie Sanguinetti."
+        heroText="Vous avez un objectif, un défi… ou juste l’envie d’arrêter de vous saboter ?"
+        heroImage={{
+          src: "/images/preparation-mentale-hero.jpg",
+          alt: "Préparation mentale",
+        }}
+        sections={[
+          {
+            title: "La préparation mentale, c'est quoi ?",
+            content:
+              "La préparation mentale, c’est l’art de faire la paix avec son mental quand il décide de faire grève. C’est aussi apprendre à transformer le stress en allié, à canaliser ses émotions et à retrouver du plaisir dans la performance. Repartez avec un mindset aussi affûté qu’un couteau de boucher : précis, tranchant, et prêt à couper court à tout ce qui freine votre élan. C’est concret, efficace, et toujours adapté à votre personnalité et votre projet. Un accompagnement actif, soigné et orienté vers vos objectifs — et toujours dans le respect du rythme et de la personne, juste avant une échéance importante.",
           },
-        },
-        {
-          title: "Processus & tarifs",
-          content:
-            "Consultation initiale (80 min), suivie d’un accompagnement modulable. Pour connaître les tarifs, contactez‑moi directement.",
-        },
-      ]}
-      cta={{ label: "Me contacter", href: "/contact" }}
-    />
+          {
+            title: "Pour qui ?",
+            content:
+              "Pour les sportifs, les artistes, les étudiants, les dirigeants, les professionnels, les particuliers. En solo, en binôme ou en équipe. Débutants, avancés, professionnels, haut niveau. Bref, pour toute personne qui veut performer sans se perdre. Pour celles et ceux qui veulent arriver le jour J de leur défi, plus préparée qu’une mariée à la mairie. Pas besoin d’être athlète de haut niveau : ici, le terrain, c’est le vôtre — compétition sportive, oral, projet pro, ou simple envie de se dépasser sans y laisser la moitié de votre sérénité.",
+            image: {
+              src: "/images/preparation-mentale-technique.jpg",
+              alt: "Techniques de préparation mentale",
+            },
+          },
+          {
+            title: "En quoi la préparation mentale peut aider ?",
+            content: (
+              <>
+                <p>
+                  La préparation mentale agit sur ce qui fait vraiment la
+                  différence :
+                </p>
+                <br />
+                <ul className="checkList">
+                  <li>✔ Gestion du stress et de la concentration</li>
+                  <li>
+                    ✔ Préparation sereine d&apos;une échéance : compétition,
+                    oral, examens…
+                  </li>
+                  <li>✔ Transformation du doute en confiance</li>
+                  <li>✔ Ancrage émotionnel</li>
+                  <li>✔ Clarté des objectifs</li>
+                  <li>✔ Récupération mentale et régulation émotionnelle</li>
+                  <li>✔ Mise en place de routines mentales efficaces</li>
+                </ul>
+                <br />
+                <p>
+                  Ici, <strong>pas de discours motivants</strong>, mais des{" "}
+                  <strong>outils concrets</strong>, des{" "}
+                  <strong>mises en situation</strong>, et un vrai travail
+                  d&apos;adaptation à votre personnalité.
+                </p>
+              </>
+            ),
+          },
+          {
+            title: "Comment ça se passe ?",
+            content: (
+              <>
+                <p>
+                  Je m’engage à donner le meilleur de mon savoir-faire, de mon
+                  intuition et de mon exigence, pour que vous puissiez donner le
+                  meilleur de vous-même et performer avec sérénité, alignement
+                  et plaisir.
+                </p>
+                <br />
+                <ol className={styles.numberedList}>
+                  <li>
+                    <strong>Prise de contact → </strong>un appel de 15 minutes
+                    (gratuit) pour définir votre besoin.
+                  </li>
+                  <li>
+                    <strong>Choix de la formule → </strong>selon votre objectif,
+                    votre rythme et votre budget.
+                  </li>
+                  <li>
+                    <strong>Accompagnement personnalisé → </strong>en cabinet,
+                    visio ou lieu adapté.
+                  </li>
+                  <li>
+                    <strong>Suivi et autonomie → </strong>outils concrets,
+                    bilans, exercices pratiques.
+                  </li>
+                </ol>
+                <br />
+                <p>
+                  Chaque formule est pensée comme un chemin : plus vous avancez,
+                  plus vous découvrez la puissance de votre mental.
+                </p>
+                <br />
+                <p>
+                  La fréquence des séances est décidé ensemble selon vos besoins
+                  et reste modifiable.
+                </p>
+                <br />
+                <p>
+                  Le règlement s&apos;effectue sur place, en espèces ou par
+                  virement. Si besoin, un paiement en plusieurs fois peut être
+                  proposé - l&apos;important, c&apos;est que la démarche reste
+                  fluide et sereine.
+                </p>
+              </>
+            ),
+          },
+          {
+            title: "Formules et tarifs",
+            content:
+              "Consultation initiale (80 min), suivie d’un accompagnement modulable. Pour connaître les tarifs, contactez‑moi directement.",
+          },
+        ]}
+        cta={{ label: "Me contacter", href: "/contact" }}
+      />
+      <div className={styles.containerCard}>
+        <CardsSection
+          cards={[
+            {
+              imageSrc: "/images/temoignages.webp",
+              imageAlt: "Séance découverte",
+              title: "Séance découverte",
+              overlayText: "1 séance 1h",
+              overlayText2: "60 €",
+              overlayText3: (
+                <>
+                  <ul>
+                    <li className={styles.list}>
+                      Une véritable séance de travail pour définir vos objectifs
+                      et identifier vos leviers de progression. Vous repartez
+                      avec un positionnement clair sur vos besoins et vos
+                      possibilités d’évolution. Si vous décidez de poursuivre
+                      l’aventure à travers une formule, cette séance vous sera
+                      offerte - Un premier pas que je fais avec vous, avec
+                      plaisir sur le chemin de votre transformation.
+                    </li>
+                  </ul>
+                </>
+              ),
+              buttonText: "Choisir",
+              href: "/contact",
+            },
+            {
+              imageSrc: "/images/podcast.jpg",
+              imageAlt: "Séance oneshot",
+              title: "Séance One Shot",
+              overlayText: "1 séance 1h30",
+              overlayText2: "150 €",
+              overlayText3: (
+                <>
+                  <ul>
+                    <li className={styles.list}>
+                      Une séance intensive pour répondre à un besoin immédiat :
+                    </li>
+                    <li className={styles.list}>
+                      • Gestion du stress avant une échéance
+                    </li>
+                    <li className={styles.list}>
+                      • Déblocage émotionnel ou mental
+                    </li>
+                    <li className={styles.list}>
+                      • Recentrage express avant un évènement important
+                    </li>
+                    <li className={styles.list}>
+                      Vous repartez avec un plan d&apos;action concret et des
+                      outils simples à appliquer
+                    </li>
+                  </ul>
+                </>
+              ),
+              buttonText: "Choisir",
+              href: "/contact",
+            },
+            {
+              imageSrc: "/images/actualites.jpg",
+              imageAlt: "Formule Elan",
+              title: "Formule Elan",
+              overlayText: "5 séances d'1h sur 2 mois",
+              overlayText2: "520 €",
+              overlayText3: (
+                <ul>
+                  <li className={styles.list}>
+                    • 1 séance découverte offerte + 4 séances de transformations
+                  </li>
+                  <li className={styles.list}>
+                    • Séances au cabinet, Visio ou lieu impactant
+                  </li>
+                  <li className={styles.list}>
+                    • Suivi par message entre les séances (réponse sous 24h
+                    ouvrées)
+                  </li>
+                  <li className={styles.list}>
+                    • Exercices et outils personnalisés selon vos besoins
+                  </li>
+                </ul>
+              ),
+              buttonText: "Choisir",
+              href: "/contact",
+            },
+            {
+              imageSrc: "/images/actualites.jpg",
+              imageAlt: "Formule Progression",
+              title: "Formule Progression",
+              overlayText: "7 séances d'1h sur 3 mois",
+              overlayText2: "840 €",
+              overlayText3: (
+                <ul>
+                  <li className={styles.list}>
+                    • 1 séance découverte offerte + 6 séances de transformations
+                  </li>
+                  <li className={styles.list}>
+                    • Séances au cabinet, Visio ou lieu impactant
+                  </li>
+                  <li className={styles.list}>
+                    • Accompagnement WhatsApp entre les séances
+                  </li>
+                  <li className={styles.list}>
+                    • Préparation la veille d&apos;un évènement important (oral,
+                    entretien, compétition)
+                  </li>
+                  <li className={styles.list}>
+                    • Outils de préparation mentale et de recentrage
+                  </li>
+                </ul>
+              ),
+              buttonText: "Choisir",
+              href: "/contact",
+            },
+            {
+              imageSrc: "/images/actualites.jpg",
+              imageAlt: "Formule Alignement",
+              title: "Formule Alignement",
+              overlayText: "11 séances d'1h sur 4 à 5 mois",
+              overlayText2: "1 500 €",
+              overlayText3: (
+                <ul>
+                  <li className={styles.list}>
+                    • 1 séance découverte offerte + 10 séances de
+                    transformations
+                  </li>
+                  <li className={styles.list}>
+                    • Séances au cabinet, Visio ou lieu impactant
+                  </li>
+                  <li className={styles.list}>
+                    • Suivi illimité par WhatsApp (avec horaires définis)
+                  </li>
+                  <li className={styles.list}>
+                    • Préparation la veille d&apos;un évènement clé
+                  </li>
+                  <li className={styles.list}>
+                    • Outils personnalisés et fiches de travail
+                  </li>
+                </ul>
+              ),
+              buttonText: "Choisir",
+              href: "/contact",
+            },
+            {
+              imageSrc: "/images/temoignages.webp",
+              imageAlt: "Formule Binôme / Equipe / Clubs",
+              title: "Formule Binôme / Equipe / Clubs",
+              overlayText: "Sur devis pour une offre adaptée",
+              overlayText2: "",
+              overlayText3: (
+                <>
+                  <ul>
+                    <li className={styles.list}>
+                      Pour les équipes sportives, entreprises ou structures
+                      souhaitant un accompagnement collectif autour de la
+                      cohésion, de la communication et de la performance
+                      mentale.
+                    </li>
+                    <li className={styles.list}>
+                      → Coaching d&apos;équipe, gestion des émotions
+                      collectives, confiance, motivation, gestion des conflits.
+                    </li>
+                  </ul>
+                </>
+              ),
+              buttonText: "Choisir",
+              href: "/contact",
+            },
+          ]}
+        />
+      </div>
+    </>
   );
 }

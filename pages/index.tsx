@@ -2,7 +2,7 @@ import CustomHead from "../components/CustomHead";
 import ThreeBoxes from "../components/ThreeBoxes";
 import AlternatingParagraphs from "../components/AlternatingParagraphs";
 import styles from "../styles/Home.module.css";
-import ImageCarousel from "../components/ImageCarousel";
+// import ImageCarousel from "../components/ImageCarousel";
 
 export default function Home() {
   return (
@@ -33,9 +33,9 @@ export default function Home() {
         </p>
       </section>
       <ThreeBoxes />
-      <section style={{ margin: "4rem 0" }}>
+      {/* <section style={{ margin: "4rem 0" }}>
         <ImageCarousel />
-      </section>
+      </section> */}
       <AlternatingParagraphs />
     </>
   );

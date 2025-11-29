@@ -1,0 +1,22 @@
+.quote {
+  background-color: white;
+  color: #a24941;
+  padding: 2rem;
+  border-left: 4px solid #efd8af;
+  margin: 2rem auto;
+  max-width: 800px;
+  border-radius: 12px;
+  font-style: italic;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-family: "Glikker", sans-serif;
+}
+
+@media (max-width: 600px) {
+  .quote {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+}

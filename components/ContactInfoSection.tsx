@@ -1,10 +1,23 @@
 import styles from "./css/ContactInfoSection.module.css";
-import { FiPhone, FiMail } from "react-icons/fi";
+import { FiPhone, FiMail, FiMapPin, FiCalendar } from "react-icons/fi";
 import { FaInstagram } from "react-icons/fa";
 
 export default function ContactInfoSection() {
   return (
     <section className={styles.container}>
+      <div className={styles.heading}>
+        <h2>💬 Un mot avant de cliquer</h2>
+        <h1>
+          <em>
+            Parce qu’une démarche vers soi, ça commence souvent par un petit
+            message. Vous n’avez pas besoin de trouver “les bons mots” : dites
+            simplement ce qui vous amène, ce que vous cherchez, ou posez vos
+            questions. Je vous répondrai avec attention, dès que possible.
+          </em>
+        </h1>
+      </div>
+      <br />
+      <br />
       <div className={styles.heading}>
         <p>ME CONTACTER</p>
         <h2>OÙ ME TROUVER</h2>
@@ -12,6 +25,16 @@ export default function ContactInfoSection() {
       </div>
 
       <div className={styles.cards}>
+        <div className={styles.card}>
+          <FiMapPin className={styles.icon} />
+          <h3>Adresse </h3>
+          <p>4, route de Ginestas, 11120 MIREPEISSET</p>
+        </div>
+        <div className={styles.card}>
+          <FiCalendar className={styles.icon} />
+          <h3>Sur rdv uniquement</h3>
+          <p>Du Lundi au Vendredi</p>
+        </div>
         <div className={styles.card}>
           <FiPhone className={styles.icon} />
           <h3>Téléphone</h3>

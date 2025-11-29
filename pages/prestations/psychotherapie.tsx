@@ -1,37 +1,101 @@
 import PrestationPage from "../../components/PrestationPage";
+import CardsSection from "../../components/CardsSection";
+import Quote from "../../components/Quote";
+import styles from "../../styles/Prestation.module.css";
+import Link from "next/link";
+import { FiCheck } from "react-icons/fi";
 
 export default function Psychotherapie() {
   return (
-    <PrestationPage
-      title="Psychothérapie"
-      description="Accompagnement psychothérapeutique individualisé avec Julie Sanguinetti — écoute, soutien et transformation."
-      heroText="Un espace de parole, de compréhension et de transformation pour vous accompagner en toute bienveillance."
-      heroImage={{
-        src: "/images/psychotherapie-hero.jpg",
-        alt: "Psychothérapie",
-      }}
-      sections={[
-        {
-          title: "Pour qui ?",
-          content:
-            "Vous traversez un moment difficile ou souhaitez mieux vous connaître ? La psychothérapie vous offre un espace d’écoute bienveillant.",
-        },
-        {
-          title: "Mon approche",
-          content:
-            "J'utilise une approche centrée sur la personne, combinée à des outils de la psychologie moderne, pour vous aider à avancer vers plus de clarté et de liberté.",
-          image: {
-            src: "/images/psychotherapie-session.jpg",
-            alt: "Séance de psychothérapie",
+    <>
+      <PrestationPage
+        title="Psychothérapie"
+        description="Accompagnement psychothérapeutique individualisé avec Julie Sanguinetti — écoute, soutien et transformation."
+        heroText="Vous ressentez un stress récurrent, une fatigue émotionnelle ou un sentiment de blocage ?
+Vous avez parfois l’impression de ne plus trop savoir où vous en êtes, ou de tourner en rond malgré
+tous vos efforts ?"
+        heroImage={{
+          src: "/images/psychotherapie-hero.jpg",
+          alt: "Psychothérapie",
+        }}
+        sections={[
+          {
+            title: "Pour qui ?",
+            content:
+              "Pour vous adultes, adolescents, couples, parents, professionnels, toute personne souhaitant se (re)connecter à elle-même à travers une approche intégrative, c’est-à-dire adaptée à chaque personne et à chaque histoire. Concernant l’accompagnement des enfants de moins de 11 ans, nous en discutons ensemble et si besoin, je réfère à des collègues spécialisés dans le Narbonnais. Cadre bienveillant, confidentiel et sans jugement.",
           },
-        },
-        {
-          title: "Déroulement d'une séance",
-          content:
-            "Première séance d’évaluation, suivie de séances régulières à votre rythme. Un accompagnement sur mesure.",
-        },
-      ]}
-      cta={{ label: "Me contacter", href: "/contact" }}
-    />
+          {
+            title: "En quoi la psychothérapie peut aider :",
+            content:
+              "Parfois, on ne va pas bien. On se sent bloqué, fatigué, vide ou perdu. On ne sait plus trop ce qu’on veut, ni même pourquoi on réagit comme ça. On fouille pour trouver le pourquoi peut bouger le comment. La psychothérapie, c’est un espace pour remettre du sens là où il n’y en a plus. Un lieu pour souffler, observer, comprendre, et se remettre en mouvement.",
+            image: {
+              src: "/images/psychotherapie-session.jpg",
+              alt: "Séance de psychothérapie",
+            },
+          },
+          {
+            title: "Bénéfices",
+            content:
+              "Retrouver de la clarté, du calme, de la confiance, du sens et du souffle.La psychothérapie, ce n'est pas parler pour parler. C’est explorer pour se libérer, comprendre pour avancer, oser être soi.",
+          },
+        ]}
+        cta={{ label: "Me contacter", href: "/contact" }}
+      />
+      <div className={styles.buttonWrapper}>
+        {" "}
+        <Link href="/contact" className={styles.button}>
+          Je souhaite en parler{" "}
+          <span className={styles.icon}>
+            <FiCheck />
+          </span>
+        </Link>
+        <Link href="/ressources/temoignages" className={styles.button}>
+          Ils en parlent mieux que moi{" "}
+          <span className={styles.icon}>
+            <FiCheck />
+          </span>
+        </Link>
+      </div>
+      <Quote>
+        “La psychothérapie aide à comprendre et apaiser. La préparation mentale
+        aide à se dépasser et performer. Deux approches complémentaires, deux
+        tarifs adaptés à leur spécificité.” <br />
+        <br /> Julie Sanguinetti
+      </Quote>
+      <CardsSection
+        cards={[
+          {
+            imageSrc: "/images/temoignages.webp",
+            imageAlt: "Séance individuelle 1h",
+            title: "Séance individuelle 1h",
+            overlayText: "60 €",
+            overlayText2: "",
+            overlayText3: "",
+            buttonText: "Choisir",
+            href: "/contact",
+          },
+          {
+            imageSrc: "/images/podcast.jpg",
+            imageAlt: "Séance en visio 1h",
+            title: "Séance en visio 1h",
+            overlayText: "60 €",
+            overlayText2: "",
+            overlayText3: "",
+            buttonText: "Choisir",
+            href: "/contact",
+          },
+          {
+            imageSrc: "/images/actualites.jpg",
+            imageAlt: "Séance duo 1h30 (parent-enfant, couple, binôme)",
+            title: "Séance duo 1h30 (parent-enfant, couple, binôme)",
+            overlayText: "90 €",
+            overlayText2: "",
+            overlayText3: "",
+            buttonText: "Choisir",
+            href: "/contact",
+          },
+        ]}
+      />
+    </>
   );
 }

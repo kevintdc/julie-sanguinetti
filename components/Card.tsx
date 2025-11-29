@@ -7,6 +7,8 @@ type CardProps = {
   imageAlt: string;
   title: string;
   overlayText: string;
+  overlayText2: string;
+  overlayText3: React.ReactNode;
   buttonText: string;
   href: string;
 };
@@ -16,6 +18,8 @@ export default function Card({
   imageAlt,
   title,
   overlayText,
+  overlayText2,
+  overlayText3,
   buttonText,
   href,
 }: CardProps) {
@@ -35,6 +39,8 @@ export default function Card({
           <div className={styles.content}>
             <h3>{title}</h3>
             <p>{overlayText}</p>
+            <p>{overlayText2}</p>
+            <p>{overlayText3}</p>
             <button className={styles.button}>{buttonText}</button>
           </div>
         </div>

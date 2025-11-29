@@ -6,6 +6,8 @@ type CardData = {
   imageAlt: string;
   title: string;
   overlayText: string;
+  overlayText2: string;
+  overlayText3: React.ReactNode;
   buttonText: string;
   href: string;
 };
