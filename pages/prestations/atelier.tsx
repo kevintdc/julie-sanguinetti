@@ -7,7 +7,7 @@ export default function Psychotherapie() {
   return (
     <>
       <PrestationPage
-        title="Ateliers colelctifs"
+        title="Ateliers collectifs"
         description="Ateliers collectifs animés par Julie Sanguinetti — partage, apprentissage et croissance personnelle."
         heroText="Vous souhaitez explorer des thématiques spécifiques en groupe, partager vos expériences et apprendre dans un cadre bienveillant ?"
         heroImage={{

@@ -1,23 +1,75 @@
-.container {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 3rem 2rem;
-  flex-wrap: wrap;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 1rem;
 }
 
-.box {
-  flex: 1 1 30%;
-  min-width: 250px;
-  text-align: center;
-  padding: 1rem;
-  border: 1px solid #eee;
-  border-radius: 8px;
+.card {
+  position: relative;
   background: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #a24941;
+  font-weight: 500;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.box p {
-  margin-top: 1rem;
-  font-size: 0.95rem;
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  z-index: 2;
+  position: relative;
+  color: #a24941;
+}
+
+.text {
+  z-index: 2;
+  position: relative;
+  color: #a24941;
+  font-weight: 500;
+}
+/* Overlay & animation d'entrée */
+.overlay {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 191, 0, 0.197),
+    rgba(255, 223, 100, 0.1)
+  );
+  opacity: 0;
+  z-index: 1;
+  transition: background 0.4s ease, opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+  background: linear-gradient(135deg, #ffb70066, rgba(255, 223, 100, 0.2));
+}
+
+/* animation d’apparition des cartes à la première rendu */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInCard {
+  animation: fadeInUp 0.8s ease-out forwards;
 }

@@ -69,7 +69,12 @@ export default function PrestationPage({
             </div>
             <div className={styles.textSide}>
               <h2>{section.title}</h2>
-              <p>{section.content}</p>
+              {typeof section.content === "string" ? (
+                <p>{section.content}</p>
+              ) : (
+                section.content
+              )}
+
               {cta && index === 0 && (
                 <Link href={cta.href} className={styles.ctaButton}>
                   {cta.label}
@@ -80,7 +85,11 @@ export default function PrestationPage({
         ) : (
           <section key={index} className={styles.section}>
             <h2>{section.title}</h2>
-            <p>{section.content}</p>
+            {typeof section.content === "string" ? (
+              <p>{section.content}</p>
+            ) : (
+              section.content
+            )}
           </section>
         )
       )}

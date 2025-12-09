@@ -42,7 +42,8 @@
 }
 
 .navList li a:hover {
-  color: #b3876b;
+  color: #cb6008;
+  text-decoration: underline;
 }
 
 /* ---------- Responsive ---------- */
@@ -97,7 +98,7 @@
   z-index: 2;
 }
 .subMenuButton:hover {
-  color: #b3876b;
+  color: #cb6008;
 }
 
 .subMenu {

@@ -1,21 +1,57 @@
 import styles from "./css/ThreeBoxes.module.css";
-import Image from "next/image";
+import { FaBrain, FaUsers, FaLeaf, FaChild, FaBookOpen } from "react-icons/fa";
+import { BiBuildings } from "react-icons/bi";
+import { useRouter } from "next/router";
+
+const cards = [
+  {
+    icon: <FaLeaf />,
+    text: "Psychothérapie & Accompagnement personnel",
+    href: "/prestations/psychotherapie",
+  },
+  {
+    icon: <FaBrain />,
+    text: "Préparation mentale & Performance",
+    href: "/prestations/preparation-mentale",
+  },
+  {
+    icon: <FaUsers />,
+    text: "Ateliers",
+    href: "/prestations/atelier",
+  },
+  {
+    icon: <BiBuildings />,
+    text: "Entreprises",
+    href: "/prestations/entreprises",
+  },
+  {
+    icon: <FaChild />,
+    text: "Qui suis-je ?",
+    href: "/apropos",
+  },
+  {
+    icon: <FaBookOpen />,
+    text: "Ressources",
+    href: "/ressources",
+  },
+];
 
 export default function ThreeBoxes() {
+  const router = useRouter();
+
   return (
-    <section className={styles.container}>
-      <div className={styles.box}>
-        <Image src="/images/logo1.jpg" alt="Logo 1" width={50} height={50} />
-        <p>Psychothérapie & Accompagnement personnel</p>
-      </div>
-      <div className={styles.box}>
-        <Image src="/images/logo2.png" alt="Logo 2" width={50} height={50} />
-        <p>Préparation mentale & Performance</p>
-      </div>
-      <div className={styles.box}>
-        <Image src="/images/logo3.jpg" alt="Logo 3" width={50} height={50} />
-        <p>Autres prestations personnalisées</p>
-      </div>
+    <section className={styles.grid}>
+      {cards.map((card, idx) => (
+        <div
+          key={idx}
+          className={`${styles.card} ${styles["fadeInCard"]}`}
+          onClick={() => router.push(card.href)}
+        >
+          <div className={styles.icon}>{card.icon}</div>
+          <p className={styles.text}>{card.text}</p>
+          <div className={styles.overlay}></div>
+        </div>
+      ))}
     </section>
   );
 }
