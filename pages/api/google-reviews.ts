@@ -4,6 +4,20 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  // 1. Répondre aux requêtes OPTIONS pour le pré‑flight
+  if (req.method === "OPTIONS") {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+    res.setHeader(
+      "Access-Control-Allow-Headers",
+      "Content-Type, Authorization"
+    );
+    return res.status(200).end();
+  }
+
+  // 2. Pour les autres requêtes, autoriser l'origine
+  res.setHeader("Access-Control-Allow-Origin", "*");
+
   const { placeId } = req.query;
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
 
