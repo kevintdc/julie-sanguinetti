@@ -1,8 +1,9 @@
 import styles from "./css/ContactMapAndForm.module.css";
 import ContactForm from "./ContactForm";
+import React from "react";
 
 type Props = {
-  onSubmit: (e: React.FormEvent) => void;
+  onSubmit: (formData: FormData) => void;
   status: "idle" | "sending" | "success" | "error";
 };
 

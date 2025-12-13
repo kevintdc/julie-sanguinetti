@@ -4,23 +4,25 @@ import ContactMapAndForm from "../components/ContactMapAndForm";
 import CustomHead from "../components/CustomHead";
 import Quote from "../components/Quote";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+declare const grecaptcha: {
+  execute(siteKey: string, options: { action: string }): Promise<string>;
+};
+
 export default function Contact() {
   const [status, setStatus] = useState<
     "idle" | "sending" | "success" | "error"
   >("idle");
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (formData: FormData) => {
     setStatus("sending");
-
-    const form = e.target as HTMLFormElement;
-    const formData = new FormData(form);
 
     const body = {
       name: formData.get("name"),
       email: formData.get("email"),
       message: formData.get("message"),
-      website: formData.get("website"), // honeypot
+      website: formData.get("website"),
+      "g-recaptcha-response": formData.get("g-recaptcha-response"),
     };
 
     const response = await fetch("/api/contact", {
@@ -31,7 +33,6 @@ export default function Contact() {
 
     if (response.ok) {
       setStatus("success");
-      form.reset();
     } else {
       setStatus("error");
     }

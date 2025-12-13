@@ -1,13 +1,30 @@
 import styles from "./css/ContactForm.module.css";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { useRef } from "react";
 
 type Props = {
-  onSubmit: (e: React.FormEvent) => void;
+  onSubmit: (formData: FormData) => void;
   status: "idle" | "sending" | "success" | "error";
 };
-
 export default function ContactForm({ onSubmit, status }: Props) {
+  const formRef = useRef<HTMLFormElement | null>(null);
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+
+    // ✅ Récupérer le token reCAPTCHA
+    const token = await executeRecaptcha?.("contact_form");
+    console.log("reCAPTCHA token:", token);
+    const formData = new FormData(formRef.current);
+    formData.append("g-recaptcha-response", token || "");
+
+    onSubmit(formData);
+  };
+
   return (
-    <form onSubmit={onSubmit} className={styles.form}>
+    <form ref={formRef} onSubmit={handleSubmit} className={styles.form}>
       <div className={styles.group}>
         <label htmlFor="name">Nom</label>
         <input
@@ -38,10 +55,9 @@ export default function ContactForm({ onSubmit, status }: Props) {
           rows={5}
           placeholder="Votre message"
           required
-        ></textarea>
+        />
       </div>
 
-      {/* Champ anti-spam invisible */}
       <input
         type="text"
         name="website"
