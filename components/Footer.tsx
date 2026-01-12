@@ -55,6 +55,14 @@ export default function Footer() {
       </div>
 
       <div className={`${styles.footerSection} ${styles.links}`}>
+        <Link
+          href="https://toudicdev.fr/"
+          className={styles.link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Site conçu et réalisé par Toudic Development
+        </Link>
         <Link href="/mentions-legales" className={styles.link}>
           Mentions légales
         </Link>

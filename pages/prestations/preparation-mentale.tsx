@@ -9,7 +9,7 @@ export default function PreparationMentale() {
         description="Préparation mentale pour sportifs, artistes et professionnels exigeants — avec Julie Sanguinetti."
         heroText="Vous avez un objectif, un défi… ou juste l’envie d’arrêter de vous saboter ?"
         heroImage={{
-          src: "/images/preparation-mentale-hero.jpg",
+          src: "/images/prepamental1.jpg",
           alt: "Préparation mentale",
         }}
         sections={[
@@ -23,7 +23,7 @@ export default function PreparationMentale() {
             content:
               "Pour les sportifs, les artistes, les étudiants, les dirigeants, les professionnels, les particuliers. En solo, en binôme ou en équipe. Débutants, avancés, professionnels, haut niveau. Bref, pour toute personne qui veut performer sans se perdre. Pour celles et ceux qui veulent arriver le jour J de leur défi, plus préparée qu’une mariée à la mairie. Pas besoin d’être athlète de haut niveau : ici, le terrain, c’est le vôtre — compétition sportive, oral, projet pro, ou simple envie de se dépasser sans y laisser la moitié de votre sérénité.",
             image: {
-              src: "/images/preparation-mentale-technique.jpg",
+              src: "/images/prepamental2.jpg",
               alt: "Techniques de préparation mentale",
             },
           },
@@ -230,8 +230,8 @@ export default function PreparationMentale() {
             },
             {
               imageSrc: "/images/actualites.jpg",
-              imageAlt: "Formule Alignement",
-              title: "Formule Alignement",
+              imageAlt: "Formule Ascension",
+              title: "Formule Ascension",
               overlayText: "11 séances d'1h sur 4 à 5 mois",
               overlayText2: "1 500 €",
               overlayText3: (
@@ -275,6 +275,38 @@ export default function PreparationMentale() {
                     <li className={styles.list}>
                       → Coaching d&apos;équipe, gestion des émotions
                       collectives, confiance, motivation, gestion des conflits.
+                    </li>
+                  </ul>
+                </>
+              ),
+              buttonText: "Choisir",
+              href: "/contact",
+            },
+            {
+              imageSrc: "/images/temoignages.webp",
+              imageAlt: "Formule Pilier",
+              title: "Formule Pilier",
+              overlayText:
+                "Accompagnement ancré et régulier qui vous soutient dans la durée — Sur Devis & avec engagement de 6 mois minimum",
+              overlayText2:
+                " Pour installer un cadre solide, avancer en profondeur et rester soutenu·e mois après mois. Idéal lorsque l’on souhaite travailler en continu, au long cours. ",
+              overlayText3: (
+                <>
+                  <ul>
+                    <li className={styles.list}>
+                      1 séance / mois (ou rythme défini ensemble)
+                    </li>
+                    <li className={styles.list}>
+                      Travail d’ancrage, d’ajustement et de consolidation
+                    </li>
+                    <li className={styles.list}>
+                      Accompagnement dans les passages clés (pro, perso, sport…)
+                    </li>
+                    <li className={styles.list}>
+                      Exercices personnalisés et retours réguliers
+                    </li>
+                    <li className={styles.list}>
+                      Suivi par message entre les séances (dans un cadre défini)
                     </li>
                   </ul>
                 </>

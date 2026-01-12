@@ -6,7 +6,7 @@ export default function AboutHero() {
     <section className={styles.container}>
       <div className={styles.imageWrapper}>
         <Image
-          src="/images/julie-portrait.jpeg" // remplace par ton image réelle
+          src="/images/julie-portrait.png" // remplace par ton image réelle
           alt="Portrait de Julie Sanguinetti"
           width={450}
           height={450}

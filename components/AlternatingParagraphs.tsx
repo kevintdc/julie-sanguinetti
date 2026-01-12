@@ -15,7 +15,7 @@ export default function AlternatingParagraphs() {
         </div>
         <div className={styles.image}>
           <Image
-            src="/images/psychotherapie-hero.jpg"
+            src="/images/psychotherapie_hero.jpg"
             alt="Psychothérapie"
             width={600}
             height={400}
@@ -29,15 +29,65 @@ export default function AlternatingParagraphs() {
         className={`${styles.block} ${styles.reverse}`}
       >
         <div className={styles.text}>
-          <h2>{"Préparation mentale"}</h2>
+          <h2>{"Préparation mentale et performance"}</h2>
           <p>
-            Pour les artistes, sportifs ou professionnels : développez vos
-            capacités mentales dans les moments clés…
+            Pour vous qui êtes prêts à investir sur vous même et développer vos
+            capacités mentales dans les moments clés
           </p>
         </div>
         <div className={styles.image}>
           <Image
             src="/images/preparation-mentale-hero.jpg"
+            alt="Préparation mentale"
+            width={600}
+            height={400}
+            className={styles.imageContent}
+          />
+        </div>
+      </Link>
+      <Link href="/prestations/accompagnements" className={styles.block}>
+        <div className={styles.text}>
+          <h2>
+            Autres accompagnements : Ateliers, entreprises, conférences &
+            formations
+          </h2>
+          <p>
+            Créer des déclics, grandir ensemble, renforcer la cohésion et faire
+            évoluer les pratiques individuelles et collectives
+          </p>
+        </div>
+        <div className={styles.image}>
+          <Image
+            src="/images/autre_accomp_accueil.jpg"
+            alt="Psychothérapie"
+            width={600}
+            height={400}
+            className={styles.imageContent}
+          />
+        </div>
+      </Link>
+
+      <Link href="/apropos" className={`${styles.block} ${styles.reverse}`}>
+        <div className={styles.text}>
+          <h2>Qui suis-je ?</h2>
+          <p>
+            Bienvenue — ici, on dédramatise. <br />
+            On réfléchit, on rigole parfois, on met du sens… et on construit un
+            mental qui tient la route, même quand ça secoue. <br />
+            Ici, on parle vrai, on avance pas à pas — et on cherche surtout des
+            déclics qui durent.
+            <br />
+            <br />
+            S’il y a de la place pour la vérité, il y en a aussi pour la douceur
+            et le courage d’avancer
+          </p>
+          <br />
+          <br />
+          <p>Cliquez pour ouvrir</p>
+        </div>
+        <div className={styles.image}>
+          <Image
+            src="/images/quisuisje_accueil.png"
             alt="Préparation mentale"
             width={600}
             height={400}

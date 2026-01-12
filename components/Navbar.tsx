@@ -55,12 +55,13 @@ export default function Navbar() {
       <div className={styles.logo}>
         <Link href="/" className={styles.logoLink}>
           <Image
-            src="/logo_julie.svg"
+            src="/logo.png"
             alt="Logo Julie Sanguinetti"
-            width={40}
-            height={40}
+            width={100}
+            height={100}
+            className={styles.logoImage}
           />
-          <span>Julie Sanguinetti</span>
+          <span className={styles.navHero}>Julie Sanguinetti</span>
         </Link>
       </div>
 
@@ -130,21 +131,8 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link href="/prestations/atelier" onClick={closeMenu}>
-                  Ateliers
-                </Link>
-              </li>
-              <li>
-                <Link href="/prestations/entreprises" onClick={closeMenu}>
-                  Entreprises
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/prestations/conferences-formations"
-                  onClick={closeMenu}
-                >
-                  Conférences & Formations
+                <Link href="/prestations/autres" onClick={closeMenu}>
+                  Autres accompagnements
                 </Link>
               </li>
             </ul>

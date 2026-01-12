@@ -1,5 +1,4 @@
 import CustomHead from "../components/CustomHead";
-import ThreeBoxes from "../components/ThreeBoxes";
 import AlternatingParagraphs from "../components/AlternatingParagraphs";
 import styles from "../styles/Home.module.css";
 // import ImageCarousel from "../components/ImageCarousel";
@@ -16,7 +15,7 @@ export default function Home() {
 
         <div className={styles.contentTop}>
           <h1>
-            Julie Sanguinetti <br /> Psychothérapie & {"[P]réparation mentale"}
+            JULIE SANGUINETTI <br /> Psychothérapie & Préparation mentale
           </h1>
           <p>
             — AUDACE & RÉSILIENCE — <br />
@@ -32,7 +31,6 @@ export default function Home() {
           pour vous.
         </p>
       </section>
-      <ThreeBoxes />
       {/* <section style={{ margin: "4rem 0" }}>
         <ImageCarousel />
       </section> */}

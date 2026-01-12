@@ -14,7 +14,7 @@ export default function Ressources() {
       <CardsSection
         cards={[
           {
-            imageSrc: "/images/temoignages.webp",
+            imageSrc: "/images/resstemoignage.jpg",
             imageAlt: "Témoignages",
             title: "Témoignages",
             overlayText: "Découvrez les retours des personnes accompagnées",
@@ -24,7 +24,7 @@ export default function Ressources() {
             href: "/ressources/temoignages",
           },
           {
-            imageSrc: "/images/podcast.jpg",
+            imageSrc: "/images/resspodcast.jpg",
             imageAlt: "Podcast",
             title: "Podcast",
             overlayText:
@@ -35,7 +35,7 @@ export default function Ressources() {
             href: "/ressources/podcast",
           },
           {
-            imageSrc: "/images/actualites.jpg",
+            imageSrc: "/images/ressactu.jpg",
             imageAlt: "Actualités",
             title: "Actualités",
             overlayText: "Les dernières nouvelles, événements & publications",
@@ -45,7 +45,7 @@ export default function Ressources() {
             href: "/ressources/actualites",
           },
           {
-            imageSrc: "/images/inspirations.webp",
+            imageSrc: "/images/ressinspi.jpg",
             imageAlt: "Inspirations",
             title: "Inspirations",
             overlayText: "Livres, citations, idées qui nourrissent le chemin",

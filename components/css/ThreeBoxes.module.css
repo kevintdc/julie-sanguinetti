@@ -42,11 +42,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 191, 0, 0.197),
-    rgba(255, 223, 100, 0.1)
-  );
+  background: linear-gradient(135deg, #c9625553, rgba(255, 223, 100, 0.1));
   opacity: 0;
   z-index: 1;
   transition: background 0.4s ease, opacity 0.4s ease;
@@ -55,9 +51,15 @@
 
 .card:hover .overlay {
   opacity: 1;
-  background: linear-gradient(135deg, #ffb70060, rgba(255, 223, 100, 0.2));
+  background: linear-gradient(135deg, #a44a3f, rgba(255, 110, 100, 0.2));
 }
-
+.card:hover .text {
+  color: #9f0909;
+  font-weight: bold;
+}
+.card:hover .icon {
+  color: #ffffff;
+}
 /* animation d’apparition des cartes à la première rendu */
 @keyframes fadeInUp {
   from {

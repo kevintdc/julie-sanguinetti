@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PrestationPage from "../components/PrestationPage";
 
 export default function Services() {
@@ -7,7 +8,7 @@ export default function Services() {
       description="Services complémentaires avec Julie Sanguinetti — interventions ponctuelles, accompagnements spécifiques et collaborations."
       heroText=""
       heroImage={{
-        src: "/images/services-hero.jpg",
+        src: "/images/infopratique.jpg",
         alt: "Services complémentaires",
       }}
       sections={[
@@ -44,12 +45,23 @@ export default function Services() {
             <>
               <p>
                 Je vous reçois sur rendez-vous uniquement, du lundi au vendredi
-                de 9H à 17H.{" "}
+                de 9H à 17H. <br />
+                Si vous avez besoin d’horaires spécifiques, nous pouvons en
+                discuter.
               </p>
               <br />
               <p>
-                ➡ Prise de rendez-vous par téléphone, mail ou via le formulaire
-                de contact.
+                ➡ Prise de rendez-vous par téléphone, mail ou via le{" "}
+                <Link href="/contact">
+                  <u>formulaire de contact.</u>
+                </Link>
+              </p>
+              <br />
+              <p>
+                Le cabinet ne dispose pas de salle d’attente. Je vous remercie
+                donc d’arriver à l’heure prévue, sans avance ou au maximum 5
+                minutes avant l’heure du rendez-vous afin de préserver la
+                confidentialité et le calme de chaque séance.
               </p>
             </>
           ),

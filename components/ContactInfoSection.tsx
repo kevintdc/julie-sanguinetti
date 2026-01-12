@@ -7,14 +7,14 @@ export default function ContactInfoSection() {
     <section className={styles.container}>
       <div className={styles.heading}>
         <h2>💬 Un mot avant de cliquer</h2>
-        <h1>
+        <h3>
           <em>
             Parce qu’une démarche vers soi, ça commence souvent par un petit
             message. Vous n’avez pas besoin de trouver “les bons mots” : dites
             simplement ce qui vous amène, ce que vous cherchez, ou posez vos
             questions. Je vous répondrai avec attention, dès que possible.
           </em>
-        </h1>
+        </h3>
       </div>
       <br />
       <br />

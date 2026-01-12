@@ -80,16 +80,19 @@
 }
 
 .button:hover {
-  background-color: #8c3f33;
+  background: linear-gradient(135deg, #a24a3b, #ffd90059);
+  color: #93301f;
+  font-weight: bold;
 }
 
 .buttonWrapper {
   display: flex;
-  justify-content: center;
-  margin-top: 1rem;
+  justify-content: stretch;
+  margin: 1rem;
 }
 
 /* 🚀 Animation au hover */
 .button:hover .icon {
-  transform: translateX(8px);
+  transform: translateX(8px) scaleX(1.8) scaleY(1.3);
+  transition: transform 0.4s ease;
 }

@@ -1,7 +1,7 @@
 import PrestationPage from "../../components/PrestationPage";
 import styles from "../../styles/Prestation.module.css";
 import Link from "next/link";
-import { FiCheck } from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 
 export default function Psychotherapie() {
   return (
@@ -92,7 +92,7 @@ export default function Psychotherapie() {
         <Link href="/contact" className={styles.button}>
           Je souhaite échanger sur mes besoins{" "}
           <span className={styles.icon}>
-            <FiCheck />
+            <FiArrowRight />
           </span>
         </Link>
       </div>

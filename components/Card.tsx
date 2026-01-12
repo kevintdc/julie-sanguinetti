@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./css/Card.module.css";
+import { useRef, useState } from "react";
 
 type CardProps = {
   imageSrc: string;
@@ -23,6 +24,31 @@ export default function Card({
   buttonText,
   href,
 }: CardProps) {
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [dragStartY, setDragStartY] = useState<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setDragStartY(e.touches[0].clientY);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (dragStartY === null) return;
+    const currentY = e.touches[0].clientY;
+    const diff = dragStartY - currentY;
+    if (diff > 50) {
+      setIsOpen(true);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setDragStartY(null);
+  };
+
+  const handleClickOverlay = () => {
+    setIsOpen(true);
+  };
+
   return (
     <Link href={href} className={styles.cardLink}>
       <div className={styles.card}>
@@ -35,7 +61,15 @@ export default function Card({
             sizes="(max-width: 768px) 100vw, 300px"
           />
         </div>
-        <div className={styles.overlay}>
+
+        <div
+          ref={overlayRef}
+          className={`${styles.overlay} ${isOpen ? styles.open : ""}`}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onClick={handleClickOverlay}
+        >
           <div className={styles.content}>
             <h3>{title}</h3>
             <p>{overlayText}</p>
@@ -43,6 +77,13 @@ export default function Card({
             <p>{overlayText3}</p>
             <button className={styles.button}>{buttonText}</button>
           </div>
+
+          {!isOpen && (
+            <div className={styles.pullIndicator}>
+              <div className={styles.line}></div>
+              <span>tirer / cliquer vers le haut</span>
+            </div>
+          )}
         </div>
       </div>
     </Link>

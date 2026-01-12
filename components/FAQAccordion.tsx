@@ -244,18 +244,14 @@ const data: QA[] = [
     ),
   },
   {
-    emoji: "",
+    emoji: "🏠",
     question: "Qu’y a t il dans ce cabinet ? ",
     answer: (
       <>
         <p>
-          Dans une belle bulle chaleureuse de 10 m2 environ avec une agréable
-          lumière naturelle donnée par la baie vitrée et la fenêtre, vous y
-          retrouverez deux fauteuils , mon bureau, mes bouquins, des plantes (
-          si j’arrive à les garder en vie), un petit hall d’entrée, des
-          toilettes entièrement accessibles PMR. Et de la déco qui fait sens
-          pour moi et qui j’espère, vous donnera une source d’inspiration
-          intérieure.
+          Un espace simple et chaleureux, pensé pour se poser. Deux fauteuils,
+          de la lumière naturelle, quelques livres, des plantes ( quand j’arrive
+          à les garder en vie ) et un cadre calme pour parler librement.
         </p>
       </>
     ),

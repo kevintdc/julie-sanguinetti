@@ -5,11 +5,10 @@
 
 .card {
   position: relative;
-  width: 300px; /* largeur fixe */
-  height: 400px; /* hauteur fixe */
+  width: 300px;
+  height: 400px;
   overflow: hidden;
   border-radius: 10px;
-  color: inherit;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
@@ -21,8 +20,8 @@
 
 .imageWrapper {
   width: 100%;
-  height: 200px; /* moitié supérieure pour image */
-  overflow: hidden;
+  height: 200px;
+  position: relative;
 }
 
 .image {
@@ -31,23 +30,29 @@
   height: 100%;
 }
 
+/* Overlay visible partiellement */
 .overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(162, 73, 65, 0.85);
-  color: white;
+  bottom: -20px; /* just under the card content */
+  left: 0;
+  right: 0;
+  background: #a44b3fc7;
+  color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  opacity: 0;
-  padding: 1.5rem;
+  padding: 1rem;
   text-align: center;
-  transition: opacity 0.3s ease;
+  transform: translateY(90%); /* partiellement visible */
+  transition: transform 0.5s ease-out, bottom 0.3s ease-out;
+  z-index: 2;
 }
 
-.card:hover .overlay {
-  opacity: 1;
+/* Overlay dès que ouvert */
+.open {
+  transform: translateY(0%);
+  bottom: 0;
 }
 
 .content h3 {
@@ -61,8 +66,8 @@
 }
 
 .button {
-  background-color: #fff;
-  color: #a24941;
+  background-color: #a24941;
+  color: #fff;
   border: none;
   padding: 0.6rem 1.2rem;
   font-weight: 600;
@@ -73,6 +78,60 @@
 
 .button:hover {
   background-color: #77342e;
-  color: #fff;
-  transition: 0.4s;
+}
+
+/* Indicateur swipe/clique */
+.pullIndicator {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: pulseIndicator 1.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.pullIndicator span {
+  font-size: 0.85rem;
+  color: #a24941;
+  font-weight: 500;
+}
+
+.line {
+  width: 30px;
+  height: 4px;
+  background: #a24941;
+  border-radius: 2px;
+  margin-bottom: 6px;
+  animation: bounceLine 1.5s infinite ease-in-out;
+}
+
+@keyframes bounceLine {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulseIndicator {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Desktop: overlay hover */
+@media (hover: hover) {
+  .card:hover .overlay {
+    transform: translateY(0%);
+    bottom: 0;
+  }
 }
