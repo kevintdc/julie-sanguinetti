@@ -80,7 +80,7 @@
 }
 
 .button:hover {
-  background: linear-gradient(135deg, #a24a3b, #ffd90059);
+  background: linear-gradient(135deg, #d79a10, #d79b1053);
   color: #93301f;
   font-weight: bold;
 }

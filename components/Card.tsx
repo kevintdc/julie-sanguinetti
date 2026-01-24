@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./css/Card.module.css";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 type CardProps = {
   imageSrc: string;
@@ -12,7 +12,10 @@ type CardProps = {
   overlayText3: React.ReactNode;
   buttonText: string;
   href: string;
+  id: string; // id unique pour chaque carte
 };
+
+let currentFlippedId: string | null = null;
 
 export default function Card({
   imageSrc,
@@ -23,36 +26,59 @@ export default function Card({
   overlayText3,
   buttonText,
   href,
+  id,
 }: CardProps) {
-  const overlayRef = useRef<HTMLDivElement>(null);
-  const [isOpen, setIsOpen] = useState(false);
-  const [dragStartY, setDragStartY] = useState<number | null>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [flipped, setFlipped] = useState(false);
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setDragStartY(e.touches[0].clientY);
-  };
+  const isMobile =
+    typeof window !== "undefined" &&
+    window.matchMedia("(max-width: 768px)").matches;
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (dragStartY === null) return;
-    const currentY = e.touches[0].clientY;
-    const diff = dragStartY - currentY;
-    if (diff > 50) {
-      setIsOpen(true);
+  useEffect(() => {
+    if (!isMobile || !cardRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (currentFlippedId !== id) {
+            currentFlippedId = id;
+            setFlipped(true);
+          }
+        } else {
+          if (currentFlippedId === id) {
+            setFlipped(false);
+            currentFlippedId = null;
+          }
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    const element = cardRef.current; // 🔐 capture la valeur actuelle
+    observer.observe(element);
+
+    return () => {
+      observer.unobserve(element); // utilise la même référence exacte
+    };
+  }, [id, isMobile]);
+
+  // desktop click toggle
+  const handleClick = () => {
+    if (!isMobile) {
+      setFlipped((prev) => !prev);
     }
   };
 
-  const handleTouchEnd = () => {
-    setDragStartY(null);
-  };
-
-  const handleClickOverlay = () => {
-    setIsOpen(true);
-  };
-
   return (
-    <Link href={href} className={styles.cardLink}>
+    <div
+      ref={cardRef}
+      className={`${styles.cardContainer} ${flipped ? styles.flipped : ""}`}
+      onClick={handleClick}
+    >
       <div className={styles.card}>
-        <div className={styles.imageWrapper}>
+        {/* face avant */}
+        <div className={styles.front}>
           <Image
             src={imageSrc}
             alt={imageAlt}
@@ -62,30 +88,17 @@ export default function Card({
           />
         </div>
 
-        <div
-          ref={overlayRef}
-          className={`${styles.overlay} ${isOpen ? styles.open : ""}`}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          onClick={handleClickOverlay}
-        >
-          <div className={styles.content}>
-            <h3>{title}</h3>
-            <p>{overlayText}</p>
-            <p>{overlayText2}</p>
-            <p>{overlayText3}</p>
-            <button className={styles.button}>{buttonText}</button>
-          </div>
-
-          {!isOpen && (
-            <div className={styles.pullIndicator}>
-              <div className={styles.line}></div>
-              <span>tirer / cliquer vers le haut</span>
-            </div>
-          )}
+        {/* face arrière */}
+        <div className={styles.back}>
+          <h3>{title}</h3>
+          <p>{overlayText}</p>
+          <p>{overlayText2}</p>
+          <div>{overlayText3}</div>
+          <Link href={href} className={styles.button}>
+            {buttonText}
+          </Link>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

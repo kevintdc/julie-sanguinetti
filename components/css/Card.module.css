@@ -1,27 +1,37 @@
-.cardLink {
-  text-decoration: none;
-  display: block;
+.cardContainer {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
 }
 
 .card {
   position: relative;
-  width: 300px;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-}
-
-.imageWrapper {
   width: 100%;
-  height: 200px;
-  position: relative;
+  height: 420px;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+  will-change: transform;
+}
+
+/* flip quand flipped */
+.flipped .card {
+  transform: rotateY(180deg);
+}
+
+/* faces */
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.front {
+  background-color: #fff;
 }
 
 .image {
@@ -30,108 +40,45 @@
   height: 100%;
 }
 
-/* Overlay visible partiellement */
-.overlay {
-  position: absolute;
-  bottom: -20px; /* just under the card content */
-  left: 0;
-  right: 0;
-  background: #a44b3fc7;
-  color: #fff;
+.back {
+  background: #fff;
+  color: #a24941;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 1.2rem;
   text-align: center;
-  transform: translateY(90%); /* partiellement visible */
-  transition: transform 0.5s ease-out, bottom 0.3s ease-out;
-  z-index: 2;
+  transform: rotateY(180deg);
 }
 
-/* Overlay dès que ouvert */
-.open {
-  transform: translateY(0%);
-  bottom: 0;
-}
-
-.content h3 {
-  margin-bottom: 0.5rem;
+/* textes / bouton */
+.back h3 {
   font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
 }
-
-.content p {
-  margin-bottom: 1rem;
+.back p {
   font-size: 1rem;
+  margin-bottom: 0.7rem;
 }
-
 .button {
+  margin-top: 1rem;
   background-color: #a24941;
   color: #fff;
-  border: none;
   padding: 0.6rem 1.2rem;
-  font-weight: 600;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.2s ease;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
-
 .button:hover {
   background-color: #77342e;
 }
 
-/* Indicateur swipe/clique */
-.pullIndicator {
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: pulseIndicator 1.8s ease-in-out infinite;
-  pointer-events: none;
-}
-
-.pullIndicator span {
-  font-size: 0.85rem;
-  color: #a24941;
-  font-weight: 500;
-}
-
-.line {
-  width: 30px;
-  height: 4px;
-  background: #a24941;
-  border-radius: 2px;
-  margin-bottom: 6px;
-  animation: bounceLine 1.5s infinite ease-in-out;
-}
-
-@keyframes bounceLine {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-@keyframes pulseIndicator {
-  0%,
-  100% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-/* Desktop: overlay hover */
+/* Hover flip uniquement desktop */
 @media (hover: hover) {
-  .card:hover .overlay {
-    transform: translateY(0%);
-    bottom: 0;
+  .cardContainer:hover .card {
+    transform: rotateY(180deg);
   }
 }
