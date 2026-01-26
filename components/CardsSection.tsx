@@ -10,6 +10,7 @@ type CardData = {
   overlayText3: React.ReactNode;
   buttonText: string;
   href: string;
+  id: string; // id unique pour chaque carte
 };
 
 type Props = {
