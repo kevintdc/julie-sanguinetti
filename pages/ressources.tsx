@@ -22,6 +22,7 @@ export default function Ressources() {
             overlayText3: "",
             buttonText: "Lire",
             href: "/ressources/temoignages",
+            id: "ressources-temoignages",
           },
           {
             imageSrc: "/images/resspodcast.jpg",
@@ -33,6 +34,7 @@ export default function Ressources() {
             overlayText3: "",
             buttonText: "Écouter",
             href: "/ressources/podcast",
+            id: "ressources-podcast",
           },
           {
             imageSrc: "/images/ressactu.jpg",
@@ -43,6 +45,7 @@ export default function Ressources() {
             overlayText3: "",
             buttonText: "Voir",
             href: "/ressources/actualites",
+            id: "ressources-actualites",
           },
           {
             imageSrc: "/images/ressinspi.jpg",
@@ -53,6 +56,7 @@ export default function Ressources() {
             overlayText3: "",
             buttonText: "Explorer",
             href: "/ressources/inspirations",
+            id: "ressources-inspirations",
           },
         ]}
       />
