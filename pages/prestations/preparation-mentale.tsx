@@ -141,6 +141,7 @@ export default function PreparationMentale() {
               ),
               buttonText: "Choisir",
               href: "/contact",
+              id: "seance-decouverte",
             },
             {
               imageSrc: "/images/podcast.jpg",
@@ -172,6 +173,7 @@ export default function PreparationMentale() {
               ),
               buttonText: "Choisir",
               href: "/contact",
+              id: "seance-oneshot",
             },
             {
               imageSrc: "/images/actualites.jpg",
@@ -198,6 +200,7 @@ export default function PreparationMentale() {
               ),
               buttonText: "Choisir",
               href: "/contact",
+              id: "formule-elan",
             },
             {
               imageSrc: "/images/actualites.jpg",
@@ -227,6 +230,7 @@ export default function PreparationMentale() {
               ),
               buttonText: "Choisir",
               href: "/contact",
+              id: "formule-progression",
             },
             {
               imageSrc: "/images/actualites.jpg",
@@ -256,6 +260,7 @@ export default function PreparationMentale() {
               ),
               buttonText: "Choisir",
               href: "/contact",
+              id: "formule-ascension",
             },
             {
               imageSrc: "/images/temoignages.webp",
@@ -281,6 +286,7 @@ export default function PreparationMentale() {
               ),
               buttonText: "Choisir",
               href: "/contact",
+              id: "formule-binomie-equipe-clubs",
             },
             {
               imageSrc: "/images/temoignages.webp",
@@ -313,6 +319,7 @@ export default function PreparationMentale() {
               ),
               buttonText: "Choisir",
               href: "/contact",
+              id: "formule-pilier",
             },
           ]}
         />
