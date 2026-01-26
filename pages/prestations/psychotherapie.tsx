@@ -52,6 +52,7 @@ tous vos efforts ?"
             overlayText3: "",
             buttonText: "Choisir",
             href: "/contact",
+            id: "seance-individuelle",
           },
           {
             imageSrc: "/images/seancevisio.jpg",
@@ -62,6 +63,7 @@ tous vos efforts ?"
             overlayText3: "",
             buttonText: "Choisir",
             href: "/contact",
+            id: "seance-visio",
           },
           {
             imageSrc: "/images/seanceduo.jpg",
@@ -72,6 +74,7 @@ tous vos efforts ?"
             overlayText3: "",
             buttonText: "Choisir",
             href: "/contact",
+            id: "seance-duo",
           },
         ]}
       />
