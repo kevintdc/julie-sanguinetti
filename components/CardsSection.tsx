@@ -10,7 +10,7 @@ type CardData = {
   overlayText3: React.ReactNode;
   buttonText: string;
   href: string;
-  id: string; // id unique pour chaque carte
+  id: string;
 };
 
 type Props = {
@@ -20,8 +20,11 @@ type Props = {
 export default function CardsSection({ cards }: Props) {
   return (
     <section className={styles.cardsGrid}>
-      {cards.map((card, index) => (
-        <Card key={index} {...card} />
+      {cards.map((card) => (
+        <div className={styles.cardWrapper} key={card.id}>
+          <Card {...card} />
+          <p className={styles.cardLabel}>{card.title}</p>
+        </div>
       ))}
     </section>
   );

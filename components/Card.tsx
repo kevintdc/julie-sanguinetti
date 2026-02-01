@@ -12,10 +12,8 @@ type CardProps = {
   overlayText3: React.ReactNode;
   buttonText: string;
   href: string;
-  id: string; // id unique pour chaque carte
+  id: string;
 };
-
-let currentFlippedId: string | null = null;
 
 export default function Card({
   imageSrc,
@@ -38,36 +36,26 @@ export default function Card({
   useEffect(() => {
     if (!isMobile || !cardRef.current) return;
 
+    const node = cardRef.current;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          if (currentFlippedId !== id) {
-            currentFlippedId = id;
-            setFlipped(true);
-          }
+          setFlipped(true);
         } else {
-          if (currentFlippedId === id) {
-            setFlipped(false);
-            currentFlippedId = null;
-          }
+          setFlipped(false);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.95 },
     );
 
-    const element = cardRef.current; // 🔐 capture la valeur actuelle
-    observer.observe(element);
+    observer.observe(node);
 
-    return () => {
-      observer.unobserve(element); // utilise la même référence exacte
-    };
+    return () => observer.disconnect();
   }, [id, isMobile]);
 
-  // desktop click toggle
   const handleClick = () => {
-    if (!isMobile) {
-      setFlipped((prev) => !prev);
-    }
+    if (!isMobile) setFlipped((prev) => !prev);
   };
 
   return (
@@ -77,23 +65,14 @@ export default function Card({
       onClick={handleClick}
     >
       <div className={styles.card}>
-        {/* face avant */}
         <div className={styles.front}>
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            fill
-            className={styles.image}
-            sizes="(max-width: 768px) 100vw, 300px"
-          />
+          <Image src={imageSrc} alt={imageAlt} fill className={styles.image} />
         </div>
-
-        {/* face arrière */}
         <div className={styles.back}>
-          <h3>{title}</h3>
-          <p>{overlayText}</p>
-          <p>{overlayText2}</p>
-          <div>{overlayText3}</div>
+          <h3 className={styles.title}>{title}</h3>
+          <p className={styles.duration}>{overlayText}</p>
+          <p className={styles.price}>{overlayText2}</p>
+          <div className={styles.scrollableText}>{overlayText3}</div>
           <Link href={href} className={styles.button}>
             {buttonText}
           </Link>

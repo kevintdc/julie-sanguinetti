@@ -7,11 +7,88 @@ export default function Autres() {
   return (
     <>
       <PrestationPage
-        title="Autres accompagnements"
-        description="Accompagnement psychothérapeutique et ateliers de préparation mentale pour les entreprises et organisations avec Julie Sanguinetti."
-        heroText="PTIT TEXT À MODIFIER POUR AUTRES"
+        title="Ateliers collectifs"
+        description="Ateliers collectifs animés par Julie Sanguinetti — partage, apprentissage et croissance personnelle."
+        heroText="Vous souhaitez explorer des thématiques spécifiques en groupe, partager vos expériences et apprendre dans un cadre bienveillant ?"
         heroImage={{
-          src: "/images/psychotherapie-hero.jpg",
+          src: "/images/atelier1.jpg",
+          alt: "Psychothérapie",
+        }}
+        sections={[
+          {
+            title:
+              "Envie d’un moment pour souffler, apprendre, échanger (et rire un peu) ?",
+            content:
+              "Les ateliers, c’est l’équilibre parfait entre réflexion, pratique et convivialité. C’est l’occasion de prendre un temps pour soi, de partager des expériences et de repartir avec des outils simples et efficaces. Et si, en plus, vous y trouvez un peu de légèreté… c’est gagné.",
+          },
+          {
+            title: "Pour qui ?",
+            content:
+              "Pour toutes les personnes curieuses, audacieuses, sensibles (et même celles qui ne le savent pas encore). Pour les âmes qui doutent, les esprits qui cogitent et les coeurs qui vibrent. Ici, on apprend à penser moins contre soi, et un peu plus pour soi. Aucune compétence requise, juste l’envie d’explorer.",
+            image: {
+              src: "/images/atelier2.jpg",
+              alt: "Séance de psychothérapie",
+            },
+          },
+          {
+            title: "En quoi les ateliers apportent un véritable soutien ?",
+            content:
+              "Un atelier, c’est un espace pour expérimenter, pas pour écouter passivement. On explore, on teste, on échange — et souvent, on découvre que l’on est pas si seul dans ce que l’on vit. A travers ces moments, laissez vous guider par l’efficacité de l’intelligence collective… Les thématiques varient, mais le fil conducteur reste le même : comprendre, ressentir, agir différemment.",
+          },
+          {
+            title: "Comment ça se passe ?",
+            content: (
+              <>
+                <ul className="checkList">
+                  <li>✔ En petits groupes (6 à 8 personnes max)</li>
+                  <li>✔ Durée : entre 1h30 et 3h selon le thème</li>
+                  <li>
+                    ✔ Tarif : entre 30 € et 70 € selon durée / matériel /
+                    thématique
+                  </li>
+                  <li>✔ Lieu : dans les lieux partenaires du Narbonnais</li>
+                </ul>
+                <br />
+                <p>Exemples de thèmes :</p>
+                <ul className="checkList">
+                  <li>✔ Calmer son mental sans s&apos;endormir</li>
+                  <li>✔ Confiance, estime et audace</li>
+                  <li>✔ Les émotions : ces amies qu&apos;on comprend mal</li>
+                  <li>✔ Petits pas, grands changements</li>
+                  <li>✔ Préparer ses objectifs perso, pro, sportifs, ...</li>
+                  <li>✔ Et tant d&apos;autres...</li>
+                </ul>
+              </>
+            ),
+          },
+          {
+            title: "Bénéfices",
+            content:
+              "Un moment pour soi, des outils concrets pour avancer, un regard neuf. Et souvent, cette petite étincelle qui donne envie de passer à l’action. Calendrier et actualités disponibles sur ma page Instagram ou sur demande. Possibilités de création d’atelier sur mesure à partir de vos projets, besoins, partenariats.",
+          },
+        ]}
+        cta={{ label: "Me contacter", href: "/contact" }}
+      />
+      <div className={styles.buttonWrapper}>
+        {" "}
+        <Link
+          href="https://www.instagram.com/julie.sanguinetti/"
+          className={styles.button}
+          target="newtab"
+        >
+          Je découvre les prochains ateliers{" "}
+          <span className={styles.icon}>
+            <FiArrowRight />
+          </span>
+        </Link>
+      </div>
+      <br />
+      <PrestationPage
+        title="Entreprises & Organisations"
+        description="Accompagnement psychothérapeutique et ateliers de préparation mentale pour les entreprises et organisations avec Julie Sanguinetti."
+        heroText="Dans le contexte professionnel actuel, le bien-être mental des collaborateurs est essentiel pour la performance et la cohésion d'équipe. Je propose des services adaptés aux besoins des entreprises et organisations."
+        heroImage={{
+          src: "/images/autre-entreprise.jpg",
           alt: "Psychothérapie",
         }}
         sections={[
@@ -26,7 +103,7 @@ export default function Autres() {
             content:
               " Probablement beaucoup de choses — à commencer par l’envie de venir travailler le matin. Dans le monde du travail, on parle souvent de performance, rarement de sens. Et pourtant, les deux vont ensemble — l’un ne dure pas sans l’autre. Mon rôle ? Créer des espaces où les équipes, les dirigeants et les collaborateurs peuvent respirer, comprendre, (ré)aligner et avancer. Parce qu’une entreprise, ce sont d’abord des humains — avec leurs forces, leurs doutes, leurs élans et leurs émotions..",
             image: {
-              src: "/images/psychotherapie-session.jpg",
+              src: "/images/autre-coaching.jpg",
               alt: "Séance de psychothérapie",
             },
           },
@@ -79,7 +156,7 @@ export default function Autres() {
                 <p>
                   <strong>SUR DEVIS</strong>, à partir de 150 €/personne selon
                   le nombre de participants, la durée et le lieu. (Je ne vends
-                  pas du temps, je propose des résultats)
+                  pas du temps, mais de la transformation)
                 </p>
               </>
             ),
@@ -91,6 +168,171 @@ export default function Autres() {
         {" "}
         <Link href="/contact" className={styles.button}>
           Je souhaite échanger sur mes besoins{" "}
+          <span className={styles.icon}>
+            <FiArrowRight />
+          </span>
+        </Link>
+      </div>
+      <br />
+      <PrestationPage
+        title="Conférences & séminaires"
+        description="Conférences et séminaires sur la psychothérapie, le bien-être mental et la préparation mentale avec Julie Sanguinetti."
+        heroText="Vous recherchez un intervenant pour une conférence, un séminaire ou un atelier au sein de votre organisation, entreprise ou événement ?"
+        heroImage={{
+          src: "/images/autre-conf.jpg",
+          alt: "Psychothérapie",
+        }}
+        sections={[
+          {
+            title: "Thématiques possibles",
+            content: (
+              <>
+                <ul className="checkList">
+                  <li>
+                    ✔ Performance et bien-être : les deux faces d’un même mental
+                  </li>
+                  <li>
+                    ✔ Les émotions au travail : comprendre pour mieux coopérer
+                  </li>
+                  <li>
+                    ✔ Audace et résilience : oser, tomber, se relever,
+                    recommencer
+                  </li>
+                  <li>✔ Comment faire d’un mal , un bien ?</li>
+                  <li>✔ Pas d’échecs, toujours des apprentissages</li>
+                  <li>✔ L’art de perdre en gagnant</li>
+                  <li>✔ (ou un thème construit sur mesure avec vous)</li>
+                </ul>
+              </>
+            ),
+          },
+          {
+            title: "Pourquoi ?",
+            content:
+              "Pour inspirer, sensibiliser, ou simplement réveiller un peu d’énergie collective. Des interventions où le fond est solide, le ton accessible, et l’émotion bien présente. Un mélange de psychologie, de préparation mentale et de concret.",
+            image: {
+              src: "/images/autre-formation.jpg",
+              alt: "Séance de psychothérapie",
+            },
+          },
+          {
+            title: "Tarifs & informations",
+            content: "👉 Sur devis selon la durée, le lieu et les besoins.",
+          },
+          {
+            title: "Les formations — offres à venir, bientôt disponibles",
+            content: "",
+          },
+          {
+            title:
+              "Transmettre, outiller, inspirer — pour des équipes qui grandissent ensemble.",
+            content: (
+              <>
+                <p>
+                  Parce que je crois profondément que{" "}
+                  <strong>le savoir est fait pour circuler</strong>, je prépare
+                  actuellement des{" "}
+                  <strong>
+                    modules de formation à destination des entreprises
+                  </strong>{" "}
+                  et des institutions.
+                </p>
+                <br />
+                <p>
+                  Parce que comprendre, c’est déjà changer. Les formations que
+                  je propose sont pensées pour allier{" "}
+                  <strong>savoir-faire et savoir-être</strong>, théorie et
+                  pratique, réflexion et mise en action.
+                </p>
+                <br />
+                <p>
+                  Ici, pas de slides interminables ni de jargon indigeste : on
+                  apprend, on échange, on bouge, on rit (un peu), et surtout… on
+                  repart avec du concret. Transmettre autrement — avec
+                  dynamisme, sens et impact.
+                </p>
+                <br />
+                <p>
+                  Possibilités de créations spécifiques en fonction des
+                  ressources nécessaires pour les différents secteurs
+                  d’activités.
+                </p>
+                <br />
+                <p>Exemples de thématiques envisagées :</p>
+                <ul className="checkList">
+                  <li>✔ Gestion du stress et des émotions au travail</li>
+                  <li>✔ Communication bienveillante et assertive</li>
+                  <li>
+                    ✔ Développement de la cohésion et de la communication
+                    d’équipe
+                  </li>
+                  <li>
+                    ✔ Gestion des conflits et communication interpersonnelle
+                  </li>
+                  <li>✔ Prévention de l’épuisement professionnel</li>
+                  <li>✔ Performance et résilience mentale</li>
+                </ul>
+                <br />
+                <p>
+                  En bref : des formations qui réveillent, font réfléchir, et
+                  laissent une trace durable. Parce qu&apos;apprendre,
+                  c&apos;est bien — et apprendre à se comprendre, c&aposest
+                  encore mieux.
+                </p>
+                <br />
+                <p>
+                  <em>
+                    (Et oui, Qualiopi se profile à l&apos;horizon — il faudra
+                    juste un peu de patience... et beaucoup de café !)
+                  </em>
+                </p>
+              </>
+            ),
+          },
+          {
+            title: "🌟 En résumé",
+            content: (
+              <>
+                <p>
+                  <strong>Le coaching</strong>, pour l’introspection qui fait
+                  avancer : Accompagnement sur mesure, plus introspectif,
+                  transformation individuelle ou collective.
+                </p>
+                <br />
+                <p>
+                  <strong>Conférences et séminaires</strong>, pour l’énergie qui
+                  relie : L’expérience collective par excellence, un temps fort
+                  pour transmettre des connaissances et une expertise à un
+                  public plus large autour d’une thématique.
+                </p>
+                <br />
+                <p>
+                  <strong>La formation</strong>, (offre à venir) pour l’action
+                  qui fait grandir : La transmission de compétences, format plus
+                  structuré, avec supports, objectifs pédagogiques, outils,
+                  etc..
+                </p>
+                <br />
+                <p>
+                  Coaching, conférences ou formations — la mission reste la même
+                  :
+                  <strong>
+                    faire émerger du sens, du lien et de la performance durable
+                  </strong>
+                  . Parce qu’un collectif fort, ça commence toujours par des
+                  humains dans la compréhension et qui vont bien.
+                </p>
+                <br />
+              </>
+            ),
+          },
+        ]}
+        cta={{ label: "Me contacter", href: "/contact" }}
+      />
+      <div className={styles.buttonWrapper}>
+        {" "}
+        <Link href="/contact" className={styles.button}>
+          Je recherche un intervenant{" "}
           <span className={styles.icon}>
             <FiArrowRight />
           </span>

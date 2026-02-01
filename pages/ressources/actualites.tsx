@@ -7,7 +7,7 @@ export default function Services() {
       description="Ateliers, accompagnements spécifiques, interventions ponctuelles — découvrez les autres services proposés par Julie Sanguinetti."
       heroText=""
       heroImage={{
-        src: "/images/services-hero.jpg",
+        src: "/images/actu.jpg",
         alt: "Services complémentaires",
       }}
       sections={[

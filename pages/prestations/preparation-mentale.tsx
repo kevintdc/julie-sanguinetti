@@ -119,7 +119,7 @@ export default function PreparationMentale() {
         <CardsSection
           cards={[
             {
-              imageSrc: "/images/temoignages.webp",
+              imageSrc: "/images/carte-decouverte.jpg",
               imageAlt: "Séance découverte",
               title: "Séance découverte",
               overlayText: "1 séance 1h",
@@ -144,7 +144,7 @@ export default function PreparationMentale() {
               id: "seance-decouverte",
             },
             {
-              imageSrc: "/images/podcast.jpg",
+              imageSrc: "/images/carte-oneshot.jpg",
               imageAlt: "Séance oneshot",
               title: "Séance One Shot",
               overlayText: "1 séance 1h30",
@@ -176,7 +176,7 @@ export default function PreparationMentale() {
               id: "seance-oneshot",
             },
             {
-              imageSrc: "/images/actualites.jpg",
+              imageSrc: "/images/carte-elan.jpg",
               imageAlt: "Formule Elan",
               title: "Formule Elan",
               overlayText: "5 séances d'1h sur 2 mois",
@@ -203,7 +203,7 @@ export default function PreparationMentale() {
               id: "formule-elan",
             },
             {
-              imageSrc: "/images/actualites.jpg",
+              imageSrc: "/images/carte-progression.jpg",
               imageAlt: "Formule Progression",
               title: "Formule Progression",
               overlayText: "7 séances d'1h sur 3 mois",
@@ -233,7 +233,7 @@ export default function PreparationMentale() {
               id: "formule-progression",
             },
             {
-              imageSrc: "/images/actualites.jpg",
+              imageSrc: "/images/carte-ascension.png",
               imageAlt: "Formule Ascension",
               title: "Formule Ascension",
               overlayText: "11 séances d'1h sur 4 à 5 mois",
@@ -263,7 +263,7 @@ export default function PreparationMentale() {
               id: "formule-ascension",
             },
             {
-              imageSrc: "/images/temoignages.webp",
+              imageSrc: "/images/carte-binome.jpg",
               imageAlt: "Formule Binôme / Equipe / Clubs",
               title: "Formule Binôme / Equipe / Clubs",
               overlayText: "Sur devis pour une offre adaptée",
@@ -289,7 +289,7 @@ export default function PreparationMentale() {
               id: "formule-binomie-equipe-clubs",
             },
             {
-              imageSrc: "/images/temoignages.webp",
+              imageSrc: "/images/carte-pilier.jpg",
               imageAlt: "Formule Pilier",
               title: "Formule Pilier",
               overlayText:

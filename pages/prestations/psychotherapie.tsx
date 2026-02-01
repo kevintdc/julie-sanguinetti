@@ -68,7 +68,7 @@ tous vos efforts ?"
           {
             imageSrc: "/images/seanceduo.jpg",
             imageAlt: "Séance duo 1h30 (parent-enfant, couple, binôme)",
-            title: "Séance duo 1h30 (parent-enfant, couple, binôme)",
+            title: "Séance duo 1h30 (parent-enfant, couple...)",
             overlayText: "90 €",
             overlayText2: "",
             overlayText3: "",

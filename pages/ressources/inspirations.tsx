@@ -1,4 +1,5 @@
 import PrestationPage from "../../components/PrestationPage";
+import styles from "../../styles/Prestation.module.css";
 
 export default function Services() {
   return (
@@ -7,7 +8,7 @@ export default function Services() {
       description="Explorez les interventions ponctuelles, accompagnements spécifiques et collaborations proposés par Julie Sanguinetti en dehors du cadre traditionnel de la psychothérapie."
       heroText="Parce qu'on ne devient pas soi tout seul"
       heroImage={{
-        src: "/images/services-hero.jpg",
+        src: "/images/inspi.jpg",
         alt: "Services complémentaires",
       }}
       sections={[
@@ -43,7 +44,7 @@ export default function Services() {
                 qui mangent des rillettes.
               </p>
               <br />
-              <p>
+              <p className={styles.quote}>
                 “Ce n&apos;est pas parce qu&apos;ils sont nombreux à avoir tort
                 qu&apos;ils ont raison.”
               </p>
@@ -60,7 +61,7 @@ export default function Services() {
                 audace et sa persévérance.
               </p>
               <br />
-              <p>
+              <p className={styles.quote}>
                 “Le courage, c&apos;est aussi de poser les questions qui
                 dérangent.”
               </p>
@@ -77,7 +78,7 @@ export default function Services() {
                 travail et son écriture brillante.
               </p>
               <br />
-              <p>
+              <p className={styles.quote}>
                 “Rire des choses graves, c&apos;est leur enlever un peu de
                 pouvoir.”
               </p>
@@ -94,7 +95,7 @@ export default function Services() {
                 mots justes sur le flou.
               </p>
               <br />
-              <p>
+              <p className={styles.quote}>
                 “Si les hommes se tirent dessus, c&apos;est qu&apos;il y a des
                 vaccins dans les balles Et si les bâtiments explosent c&apos;est
                 pour fabriquer des étoiles Et si un jour ils ont disparu,
@@ -116,7 +117,7 @@ export default function Services() {
                 sauvage, et ce regard qui a tout vu sans jamais juger.
               </p>
               <br />
-              <p>
+              <p className={styles.quote}>
                 “La vie, c&apos;est ce qui arrive quand on arrête de vouloir
                 tout comprendre.”
               </p>
@@ -132,10 +133,10 @@ export default function Services() {
                 résilience et sa philosophie sans grands discours.
               </p>
               <br />
-              <p>
-                “Every struggle in your life has shaped you into the person you
-                are today. Be thankful for the hard times; they can only make
-                you stronger.”
+              <p className={styles.quote}>
+                “Chaque lutte de votre vie vous a façonné en la personne que
+                vous êtes aujourd&lsquo;hui. Soyez reconnaissant pour les
+                moments difficiles ; ils ne peuvent que vous rendre plus fort.”
               </p>
             </>
           ),
@@ -149,7 +150,9 @@ export default function Services() {
                 de transformer la scène en déclaration d&apos;existence.
               </p>
               <br />
-              <p>“I won&apos;t be a rock star. I will be a legend.”</p>
+              <p className={styles.quote}>
+                “I won&apos;t be a rock star. I will be a legend.”
+              </p>
             </>
           ),
         },
@@ -162,7 +165,9 @@ export default function Services() {
                 dire le monde autrement.
               </p>
               <br />
-              <p>“Le rire, c&apos;est la politesse du désespoir.”</p>
+              <p className={styles.quote}>
+                “Le rire, c&apos;est la politesse du désespoir.”
+              </p>
             </>
           ),
         },
@@ -175,7 +180,7 @@ export default function Services() {
                 d&apos;incarner la résilience sans jamais la réciter.
               </p>
               <br />
-              <p>
+              <p className={styles.quote}>
                 “Tout est possible à celui qui ose, travaille et
                 n&apos;abandonne jamais.”
               </p>
@@ -191,7 +196,7 @@ export default function Services() {
                 manière d&apos;unir la lucidité à la compassion.
               </p>
               <br />
-              <p>
+              <p className={styles.quote}>
                 “L&apos;attention est la forme la plus rare et la plus pure de
                 la générosité.”
               </p>

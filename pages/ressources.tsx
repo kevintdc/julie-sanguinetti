@@ -1,5 +1,6 @@
 import CustomHead from "../components/CustomHead";
 import CardsSection from "../components/CardsSection";
+import styles from "../styles/Prestation.module.css";
 
 export default function Ressources() {
   return (
@@ -29,9 +30,21 @@ export default function Ressources() {
             imageAlt: "Podcast",
             title: "Podcast",
             overlayText:
-              "Écoutez les épisodes sur le mental, les émotions & plus",
+              "Écoutez les épisodes où chaque interview vous laisse en réflexion ",
             overlayText2: "",
-            overlayText3: "",
+            overlayText3: (
+              <>
+                <ul>
+                  <li className={styles.list}>
+                    👉 Des histoires qui bousculent
+                  </li>
+                  <li className={styles.list}>👉 Des prises de conscience</li>
+                  <li className={styles.list}>
+                    👉 Des outils concrets pour le quotidien
+                  </li>
+                </ul>
+              </>
+            ),
             buttonText: "Écouter",
             href: "/ressources/podcast",
             id: "ressources-podcast",

@@ -14,9 +14,10 @@
   font-family: "Glikker", sans-serif;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .quote {
     font-size: 1rem;
     padding: 1.5rem;
+    margin: 1rem;
   }
 }

@@ -27,9 +27,10 @@
 .heroImage {
   width: 100%;
   max-width: 800px;
-  height: 600px;
+  max-height: fit-content;
   overflow: hidden;
   border-radius: 8px;
+  zoom: 70%;
 }
 
 .section {
@@ -63,6 +64,10 @@
 
 .imageSide {
   flex: 1;
+}
+.imageSide img {
+  width: 100%;
+  border-radius: 8px;
 }
 
 .textSide {
@@ -122,6 +127,15 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+
+.quote {
+  font-style: italic;
+  border-left: 4px solid #a24a3b;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: #666;
+}
+
 @media (min-width: 768px) {
   .hero {
     flex-direction: row;
@@ -167,6 +181,11 @@
   .textSide {
     width: 100%;
   }
+  .heroImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
 }
 .button {
   display: flex;
@@ -194,6 +213,7 @@
   display: flex;
   justify-content: stretch;
   margin: 1rem;
+  gap: 10px;
 }
 
 /* 🚀 Animation au hover */
