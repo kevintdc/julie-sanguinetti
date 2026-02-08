@@ -12,6 +12,10 @@ export default function AlternatingParagraphs() {
             Découvrez l’accompagnement thérapeutique pour retrouver équilibre,
             écoute intérieure, et expression personnelle…
           </p>
+          <div className={styles.ctaHint}>
+            <span>En savoir plus</span>
+            <span className={styles.chevron}>➜</span>
+          </div>
         </div>
         <div className={styles.image}>
           <Image
@@ -34,6 +38,10 @@ export default function AlternatingParagraphs() {
             Pour vous qui êtes prêts à investir sur vous même et développer vos
             capacités mentales dans les moments clés
           </p>
+          <div className={styles.ctaHint}>
+            <span>En savoir plus</span>
+            <span className={styles.chevron}>➜</span>
+          </div>
         </div>
         <div className={styles.image}>
           <Image
@@ -55,6 +63,10 @@ export default function AlternatingParagraphs() {
             Créer des déclics, grandir ensemble, renforcer la cohésion et faire
             évoluer les pratiques individuelles et collectives
           </p>
+          <div className={styles.ctaHint}>
+            <span>En savoir plus</span>
+            <span className={styles.chevron}>➜</span>
+          </div>
         </div>
         <div className={styles.image}>
           <Image
@@ -81,9 +93,10 @@ export default function AlternatingParagraphs() {
             S’il y a de la place pour la vérité, il y en a aussi pour la douceur
             et le courage d’avancer
           </p>
-          <br />
-          <br />
-          <p>Cliquez pour ouvrir</p>
+          <div className={styles.ctaHint}>
+            <span>En savoir plus</span>
+            <span className={styles.chevron}>➜</span>
+          </div>
         </div>
         <div className={styles.image}>
           <Image

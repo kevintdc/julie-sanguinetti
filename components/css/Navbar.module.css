@@ -8,7 +8,9 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  transition:
+    background 0.3s ease,
+    backdrop-filter 0.3s ease;
 }
 .navHero {
   font-family: Didot, serif;
@@ -123,7 +125,9 @@
   display: none;
   opacity: 0;
   transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
   pointer-events: none;
 }
 
@@ -158,7 +162,9 @@
     z-index: 100;
     opacity: 0;
     transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
     pointer-events: none;
   }
 
@@ -181,20 +187,31 @@
     left: 0;
     border: none;
     box-shadow: none;
-    padding: 0.5rem 0 0 1rem;
-    min-width: auto;
+    padding: 0;
+    min-width: 100%;
+    background: #ffffff; /* ✅ fond blanc */
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
   }
 
   .showSubMenu {
-    display: block;
+    max-height: 500px; /* ✅ assez haut pour tout contenu */
+    padding: 0.5rem 1rem 0.5rem 1.5rem;
   }
-
   .hasSubMenu:hover .subMenu {
-    display: flex;
+    display: block; /* optionnel */
   }
 
   .subMenuButton {
-    cursor: default;
+    cursor: pointer; /* ✅ rétabli pour le clic */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .subMenu li {
+    padding: 0.4rem 0;
   }
 }
 .submenu {

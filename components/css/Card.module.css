@@ -7,107 +7,139 @@
 }
 
 .card {
+  position: relative;
   width: 100%;
   aspect-ratio: 4 / 5;
-  position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s ease;
 }
 
-/* Flip */
-.flipped .card {
-  transform: rotateY(180deg);
-}
-
-/* Hover flip desktop */
-@media (hover: hover) {
-  .cardContainer:hover .card {
-    transform: rotateY(180deg);
-  }
-}
-
-/* face arrière + face avant cibles */
 .front,
 .back {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden; /* essentiel */
+  backface-visibility: hidden;
   top: 0;
   left: 0;
   border-radius: 12px;
   overflow: hidden;
 }
 
-/* ======================================
-   FACE AVANT — IMAGE
-   ====================================== */
 .front {
-  z-index: 2; /* devant au départ */
+  z-index: 2;
   transform: rotateY(0deg);
 }
 
 .front .image {
+  object-fit: cover;
   width: 100%;
   height: 100%;
+  transition: opacity 0.3s ease;
 }
-
-/* ======================================
-   FACE ARRIÈRE — TEXTE
-   ====================================== */
+.flipped .front .image {
+  opacity: 0.25;
+  transition: opacity 0.4s ease;
+}
 .back {
   background-color: #fff;
   color: #a24941;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* important pour le scroll */
+  justify-content: center;
   align-items: center;
   padding: 1.3rem;
   text-align: center;
   transform: rotateY(180deg);
   box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.05);
-  overflow-y: auto; /* ✅ scroll vertical */
-  scroll-behavior: smooth;
 }
 
-.duration,
-.price {
+.back h3 {
+  margin-bottom: 0.7rem;
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+.back p {
   font-size: 1rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.6rem;
+}
+.backImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+  z-index: 0;
 }
 
-/* Scrollable center */
-.scrollableText {
-  max-height: 120px;
-  overflow-y: auto;
-  padding-right: 6px;
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
-  line-height: 1.4;
-  scrollbar-width: thin;
-  scrollbar-color: #ccc transparent;
+.backContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-/* scrollbar style */
-.scrollableText::-webkit-scrollbar {
-  width: 6px;
-}
-.scrollableText::-webkit-scrollbar-thumb {
-  background-color: #ccc;
-  border-radius: 10px;
-}
-
-/* Button */
 .button {
-  margin-top: auto;
+  margin-top: 1rem;
   padding: 0.7rem 1.3rem;
   background-color: #a24941;
   color: white;
   border-radius: 6px;
-  font-weight: 500;
   text-decoration: none;
+  font-weight: 500;
   transition: background 0.3s ease;
 }
+
 .button:hover {
   background-color: #77342e;
+}
+
+.scrollableText {
+  max-height: 100px;
+  overflow-y: auto;
+  padding: 0.5rem 0;
+}
+
+/* === Indicateur tactile mobile === */
+.touchIndicator {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  color: #a24941;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  animation: fadeInIndicator 0.8s ease-out forwards 0.5s;
+}
+
+@keyframes fadeInIndicator {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Flip activé */
+.flipped .card {
+  transform: rotateY(180deg);
+}
+
+/* Hover flip (desktop uniquement) */
+@media (hover: hover) {
+  .cardContainer:hover .card {
+    transform: rotateY(180deg);
+  }
 }

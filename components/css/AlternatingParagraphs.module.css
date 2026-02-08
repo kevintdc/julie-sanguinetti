@@ -15,6 +15,7 @@
   border-radius: 8px;
   overflow: hidden;
   transition: box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .block:hover {
@@ -25,6 +26,7 @@
   flex: 1;
   text-align: justify;
   padding: 2rem;
+  position: relative;
 }
 
 .image {
@@ -38,6 +40,7 @@
   object-fit: cover;
   display: block;
 }
+
 .imageContent {
   width: 100%;
   height: auto;
@@ -49,16 +52,58 @@
   flex-direction: row-reverse;
 }
 
-/* Mobile responsive */
+/* === INDICATEUR INTERACTIF === */
+.ctaHint {
+  font-size: 0.85rem;
+  color: #a24941;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.block:hover .ctaHint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.chevron {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.block:hover .chevron {
+  transform: translateX(4px);
+}
+
+/* === Mobile Responsive === */
 @media (max-width: 768px) {
   .block {
     flex-direction: column;
   }
+
   .reverse {
     flex-direction: column;
   }
+
   .image,
   .text {
     padding: 1rem;
+  }
+
+  .ctaHint {
+    opacity: 1;
+    transform: none;
+    margin-top: 1rem;
+  }
+
+  .block:hover .chevron {
+    transform: none;
   }
 }
