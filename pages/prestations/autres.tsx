@@ -18,8 +18,20 @@ export default function Autres() {
           {
             title:
               "Envie d’un moment pour souffler, apprendre, échanger (et rire un peu) ?",
-            content:
-              "Les ateliers, c’est l’équilibre parfait entre réflexion, pratique et convivialité. C’est l’occasion de prendre un temps pour soi, de partager des expériences et de repartir avec des outils simples et efficaces. Et si, en plus, vous y trouvez un peu de légèreté… c’est gagné.",
+            content: (
+              <>
+                <p>
+                  Les ateliers, c’est l’équilibre parfait entre{" "}
+                  <strong>réflexion</strong>, pratique et convivialité. C’est
+                  l’occasion de prendre un temps pour soi, de{" "}
+                  <strong>partager</strong> des expériences et de repartir avec
+                  des outils simples et efficaces. Et si, en plus, vous y
+                  trouvez un peu de <strong>légèreté...</strong> c’est gagné.
+                  Parce qu’on réalise aussi une chose essentielle : On est pas
+                  seuls à tourner en boucle, douter, galérer…
+                </p>
+              </>
+            ),
           },
           {
             title: "Pour qui ?",
@@ -63,8 +75,19 @@ export default function Autres() {
           },
           {
             title: "Bénéfices",
-            content:
-              "Un moment pour soi, des outils concrets pour avancer, un regard neuf. Et souvent, cette petite étincelle qui donne envie de passer à l’action. Calendrier et actualités disponibles sur ma page Instagram ou sur demande. Possibilités de création d’atelier sur mesure à partir de vos projets, besoins, partenariats.",
+            content: (
+              <>
+                <p>
+                  Un moment <strong>pour soi</strong>, des outils concrets pour{" "}
+                  <strong>avancer</strong>, un regard neuf. Et souvent, cette
+                  petite étincelle qui donne envie de passer à l’action.
+                  Calendrier et actualités disponibles sur ma page Instagram ou
+                  sur demande. Possibilités de création d’atelier{" "}
+                  <strong>sur mesure</strong> à partir de vos projets, besoins,
+                  partenariats.
+                </p>
+              </>
+            ),
           },
         ]}
         cta={{ label: "Me contacter", href: "/contact" }}
@@ -86,22 +109,32 @@ export default function Autres() {
       <PrestationPage
         title="Entreprises & Organisations"
         description="Accompagnement psychothérapeutique et ateliers de préparation mentale pour les entreprises et organisations avec Julie Sanguinetti."
-        heroText="Dans le contexte professionnel actuel, le bien-être mental des collaborateurs est essentiel pour la performance et la cohésion d'équipe. Je propose des services adaptés aux besoins des entreprises et organisations."
+        heroText="Coaching, formations, interventions, conférences et séminaires"
         heroImage={{
           src: "/images/autre-entreprise.jpg",
           alt: "Psychothérapie",
         }}
         sections={[
           {
-            title:
-              "Coaching, formations, interventions, conférences et séminaires",
-            content:
-              "Et si tout commençait par le mental, l’émotionnel et la communication, ça changerait quoi ?",
-          },
-          {
             title: "Et si la performance passait (vraiment) par l’humain ?",
-            content:
-              " Probablement beaucoup de choses — à commencer par l’envie de venir travailler le matin. Dans le monde du travail, on parle souvent de performance, rarement de sens. Et pourtant, les deux vont ensemble — l’un ne dure pas sans l’autre. Mon rôle ? Créer des espaces où les équipes, les dirigeants et les collaborateurs peuvent respirer, comprendre, (ré)aligner et avancer. Parce qu’une entreprise, ce sont d’abord des humains — avec leurs forces, leurs doutes, leurs élans et leurs émotions..",
+            content: (
+              <>
+                <p>
+                  Et si tout commençait par{" "}
+                  <strong>le mental, l’émotionnel et la communication</strong>,
+                  ça changerait quoi ? Probablement beaucoup de choses — à
+                  commencer par l’envie de venir travailler le matin. Dans le
+                  monde du travail, on parle souvent de performance, rarement de
+                  sens. Et pourtant, les deux vont ensemble —{" "}
+                  <strong>l’un ne dure pas sans l’autre.</strong> Mon rôle ?
+                  Créer des espaces où les équipes, les dirigeants et les
+                  collaborateurs peuvent respirer, comprendre, (ré)aligner et
+                  avancer. Parce qu’une entreprise, ce sont d’abord des humains
+                  — avec leurs forces, leurs doutes, leurs élans et leurs
+                  émotions..
+                </p>
+              </>
+            ),
             image: {
               src: "/images/autre-coaching.jpg",
               alt: "Séance de psychothérapie",
@@ -154,9 +187,9 @@ export default function Autres() {
                 </p>
                 <br />
                 <p>
-                  <strong>SUR DEVIS</strong>, à partir de 150 €/personne selon
-                  le nombre de participants, la durée et le lieu. (Je ne vends
-                  pas du temps, mais de la transformation)
+                  <strong>Sur devis</strong>, selon le nombre de participants,
+                  la durée et le lieu. (Je ne vends pas du temps, mais de la
+                  transformation)
                 </p>
               </>
             ),
@@ -184,6 +217,21 @@ export default function Autres() {
         }}
         sections={[
           {
+            title: "Pourquoi ?",
+            content: (
+              <>
+                <p>
+                  Pour inspirer, <strong>sensibiliser</strong>, ou simplement{" "}
+                  <strong>réveiller</strong> un peu d’énergie collective. Des
+                  interventions où le fond est solide, le ton{" "}
+                  <strong>accessible</strong>, et l’émotion bien présente. Un
+                  mélange de psychologie, de préparation mentale et de{" "}
+                  <strong>concret.</strong>
+                </p>
+              </>
+            ),
+          },
+          {
             title: "Thématiques possibles",
             content: (
               <>
@@ -207,22 +255,31 @@ export default function Autres() {
             ),
           },
           {
-            title: "Pourquoi ?",
-            content:
-              "Pour inspirer, sensibiliser, ou simplement réveiller un peu d’énergie collective. Des interventions où le fond est solide, le ton accessible, et l’émotion bien présente. Un mélange de psychologie, de préparation mentale et de concret.",
-            image: {
-              src: "/images/autre-formation.jpg",
-              alt: "Séance de psychothérapie",
-            },
-          },
-          {
             title: "Tarifs & informations",
             content: "👉 Sur devis selon la durée, le lieu et les besoins.",
           },
-          {
-            title: "Les formations — offres à venir, bientôt disponibles",
-            content: "",
-          },
+        ]}
+        cta={{ label: "Me contacter", href: "/contact" }}
+      />
+      <div className={styles.buttonWrapper}>
+        {" "}
+        <Link href="/contact" className={styles.button}>
+          Je recherche un intervenant{" "}
+          <span className={styles.icon}>
+            <FiArrowRight />
+          </span>
+        </Link>
+      </div>
+      <br />
+      <PrestationPage
+        title="Les formations — Possibilité QUALIOPI, me contacter"
+        description="Ateliers collectifs animés par Julie Sanguinetti — partage, apprentissage et croissance personnelle."
+        heroText="TEXTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
+        heroImage={{
+          src: "/images/autre-formation.jpg",
+          alt: "Formation",
+        }}
+        sections={[
           {
             title:
               "Transmettre, outiller, inspirer — pour des équipes qui grandissent ensemble.",
@@ -276,53 +333,24 @@ export default function Autres() {
                 <p>
                   En bref : des formations qui réveillent, font réfléchir, et
                   laissent une trace durable. Parce qu&apos;apprendre,
-                  c&apos;est bien — et apprendre à se comprendre, c&aposest
+                  c&apos;est bien — et apprendre à se comprendre, c&apos;est
                   encore mieux.
                 </p>
                 <br />
-                <p>
-                  <em>
-                    (Et oui, Qualiopi se profile à l&apos;horizon — il faudra
-                    juste un peu de patience... et beaucoup de café !)
-                  </em>
-                </p>
               </>
             ),
           },
           {
-            title: "🌟 En résumé",
+            title: "Tarifs",
             content: (
               <>
                 <p>
-                  <strong>Le coaching</strong>, pour l’introspection qui fait
-                  avancer : Accompagnement sur mesure, plus introspectif,
-                  transformation individuelle ou collective.
+                  <em>
+                    <strong>Sur devis</strong>, selon le nombre de participants,
+                    la durée et le lieu. (Je ne vends pas du temps, mais de la
+                    transformation)
+                  </em>
                 </p>
-                <br />
-                <p>
-                  <strong>Conférences et séminaires</strong>, pour l’énergie qui
-                  relie : L’expérience collective par excellence, un temps fort
-                  pour transmettre des connaissances et une expertise à un
-                  public plus large autour d’une thématique.
-                </p>
-                <br />
-                <p>
-                  <strong>La formation</strong>, (offre à venir) pour l’action
-                  qui fait grandir : La transmission de compétences, format plus
-                  structuré, avec supports, objectifs pédagogiques, outils,
-                  etc..
-                </p>
-                <br />
-                <p>
-                  Coaching, conférences ou formations — la mission reste la même
-                  :
-                  <strong>
-                    faire émerger du sens, du lien et de la performance durable
-                  </strong>
-                  . Parce qu’un collectif fort, ça commence toujours par des
-                  humains dans la compréhension et qui vont bien.
-                </p>
-                <br />
               </>
             ),
           },

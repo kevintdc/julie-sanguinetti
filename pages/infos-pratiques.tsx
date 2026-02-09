@@ -69,7 +69,7 @@ export default function Services() {
         {
           title: "Tarifs et règlements",
           content:
-            "Les tarifs sont consultables dans les prestations définies et sont non assujettis à la TVA, (TVA non applicable de l’art. 293B du CGI). Le règlement se fait sur place à la fin de chaque prestation en espèces ou par virement). Il n’y a pas de distributeur automatique dans le village, vous en trouverez cependant facilement à Ginestas, Argeliers, Saint Marcel d’Aude et autres villages aux alentours. Les séances ne sont pas prises en charge par la Sécurité sociale, mais certaines mutuelles remboursent une partie du montant. N’hésitez pas à vous renseigner auprès de la votre.",
+            "Les tarifs sont consultables dans les prestations définies et sont non assujettis à la TVA, (TVA non applicable de l’art. 293B du CGI). Le règlement se fait sur place à la fin de chaque prestation. Il n’y a pas de distributeur automatique dans le village, vous en trouverez cependant facilement à Ginestas, Argeliers, Saint Marcel d’Aude et autres villages aux alentours. Les séances ne sont pas prises en charge par la Sécurité sociale, mais certaines mutuelles remboursent une partie du montant. N’hésitez pas à vous renseigner auprès de la votre.",
         },
         {
           title: "Confidentialité et cadre",

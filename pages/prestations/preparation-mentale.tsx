@@ -15,13 +15,45 @@ export default function PreparationMentale() {
         sections={[
           {
             title: "La préparation mentale, c'est quoi ?",
-            content:
-              "La préparation mentale, c’est l’art de faire la paix avec son mental quand il décide de faire grève. C’est aussi apprendre à transformer le stress en allié, à canaliser ses émotions et à retrouver du plaisir dans la performance. Repartez avec un mindset aussi affûté qu’un couteau de boucher : précis, tranchant, et prêt à couper court à tout ce qui freine votre élan. C’est concret, efficace, et toujours adapté à votre personnalité et votre projet. Un accompagnement actif, soigné et orienté vers vos objectifs — et toujours dans le respect du rythme et de la personne, juste avant une échéance importante.",
+            content: (
+              <>
+                <p>
+                  La préparation mentale, c’est l’art de faire{" "}
+                  <strong>la paix avec son mental</strong> quand il décide de
+                  faire grève. C’est aussi apprendre à
+                  <strong>transformer</strong> le stress en allié, à canaliser
+                  ses émotions et à retrouver du <strong>plaisir</strong> dans
+                  la <strong>performance</strong>. Repartez avec un mindset
+                  aussi affûté qu’un couteau de boucher : précis, tranchant, et
+                  prêt à couper court à tout ce qui freine votre élan. C’est
+                  concret, <strong>efficace</strong>, et toujours adapté à votre
+                  personnalité et votre projet. Un accompagnement actif, soigné
+                  et orienté vers vos objectifs — et toujours dans le{" "}
+                  <strong>respect</strong> du rythme et de la personne, juste
+                  avant une échéance importante.
+                </p>
+                <br />
+              </>
+            ),
           },
           {
             title: "Pour qui ?",
-            content:
-              "Pour les sportifs, les artistes, les étudiants, les dirigeants, les professionnels, les particuliers. En solo, en binôme ou en équipe. Débutants, avancés, professionnels, haut niveau. Bref, pour toute personne qui veut performer sans se perdre. Pour celles et ceux qui veulent arriver le jour J de leur défi, plus préparée qu’une mariée à la mairie. Pas besoin d’être athlète de haut niveau : ici, le terrain, c’est le vôtre — compétition sportive, oral, projet pro, ou simple envie de se dépasser sans y laisser la moitié de votre sérénité.",
+            content: (
+              <>
+                <p>
+                  Pour les sportifs, les artistes, les étudiants, les
+                  dirigeants, les professionnels, les particuliers. En solo, en
+                  binôme ou en équipe. Débutants, avancés, professionnels, haut
+                  niveau. Bref, pour toute personne qui veut performer sans se
+                  perdre. Pour celles et ceux qui veulent arriver le jour J de
+                  leur défi, plus préparée qu’une mariée à la mairie. Pas besoin
+                  d’être athlète de haut niveau :{" "}
+                  <strong>ici, le terrain, c’est le vôtre</strong> — compétition
+                  sportive, oral, projet pro, ou simple envie de se dépasser
+                  sans y laisser la moitié de votre sérénité.
+                </p>
+              </>
+            ),
             image: {
               src: "/images/prepamental2.jpg",
               alt: "Techniques de préparation mentale",
@@ -47,6 +79,13 @@ export default function PreparationMentale() {
                   <li>✔ Clarté des objectifs</li>
                   <li>✔ Récupération mentale et régulation émotionnelle</li>
                   <li>✔ Mise en place de routines mentales efficaces</li>
+                  <li>✔ Travail sur son identité</li>
+                  <br />
+                  <li>
+                    <em>
+                      Liste non exhaustive, la seule limite c&apos;est vous !
+                    </em>
+                  </li>
                 </ul>
                 <br />
                 <p>
@@ -110,7 +149,7 @@ export default function PreparationMentale() {
           {
             title: "Formules et tarifs",
             content:
-              "Consultation initiale (80 min), suivie d’un accompagnement modulable. Pour connaître les tarifs, contactez‑moi directement.",
+              "Ces offres sont pensées comme une belle histoire. Je démarre avec élan, j’avance dans la progression, je prends un autre niveau avec l’ascension et je m’ancre dans la durée avec les piliers. Consultation initiale (60 min), suivie d’un accompagnement modulable. Un besoin, une question ? Discutons-en ensemble !",
           },
         ]}
         cta={{ label: "Me contacter", href: "/contact" }}
@@ -176,6 +215,19 @@ export default function PreparationMentale() {
               id: "seance-oneshot",
             },
             {
+              imageSrc: "/images/carte-pilier.jpg",
+              imageAlt: "Formule Pilier",
+              title: "Formule Pilier",
+              overlayText:
+                "Accompagnement ancré et régulier qui vous soutient dans la durée — sur devis",
+              overlayText2:
+                " Pour installer un cadre solide, avancer en profondeur et rester soutenu·e mois après mois. Idéal lorsque l’on souhaite travailler en continu, au long cours. ",
+              overlayText3: "",
+              buttonText: "Me contacter",
+              href: "/contact",
+              id: "formule-pilier",
+            },
+            {
               imageSrc: "/images/carte-elan.jpg",
               imageAlt: "Formule Elan",
               title: "Formule Elan",
@@ -237,7 +289,7 @@ export default function PreparationMentale() {
               imageAlt: "Formule Ascension",
               title: "Formule Ascension",
               overlayText: "11 séances d'1h sur 4 à 5 mois",
-              overlayText2: "1 500 €",
+              overlayText2: "1 490 €",
               overlayText3: (
                 <ul>
                   <li className={styles.list}>
@@ -255,6 +307,10 @@ export default function PreparationMentale() {
                   </li>
                   <li className={styles.list}>
                     • Outils personnalisés et fiches de travail
+                  </li>
+                  <li className={styles.list}>
+                    • 1 séance inclue dans un lieu atypique (ex : blanéo,
+                    cryo...)
                   </li>
                 </ul>
               ),
@@ -287,39 +343,6 @@ export default function PreparationMentale() {
               buttonText: "Choisir",
               href: "/contact",
               id: "formule-binomie-equipe-clubs",
-            },
-            {
-              imageSrc: "/images/carte-pilier.jpg",
-              imageAlt: "Formule Pilier",
-              title: "Formule Pilier",
-              overlayText:
-                "Accompagnement ancré et régulier qui vous soutient dans la durée — Sur Devis & avec engagement de 6 mois minimum",
-              overlayText2:
-                " Pour installer un cadre solide, avancer en profondeur et rester soutenu·e mois après mois. Idéal lorsque l’on souhaite travailler en continu, au long cours. ",
-              overlayText3: (
-                <>
-                  <ul>
-                    <li className={styles.list}>
-                      1 séance / mois (ou rythme défini ensemble)
-                    </li>
-                    <li className={styles.list}>
-                      Travail d’ancrage, d’ajustement et de consolidation
-                    </li>
-                    <li className={styles.list}>
-                      Accompagnement dans les passages clés (pro, perso, sport…)
-                    </li>
-                    <li className={styles.list}>
-                      Exercices personnalisés et retours réguliers
-                    </li>
-                    <li className={styles.list}>
-                      Suivi par message entre les séances (dans un cadre défini)
-                    </li>
-                  </ul>
-                </>
-              ),
-              buttonText: "Choisir",
-              href: "/contact",
-              id: "formule-pilier",
             },
           ]}
         />

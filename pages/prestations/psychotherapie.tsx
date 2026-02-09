@@ -21,8 +21,50 @@ tous vos efforts ?"
         sections={[
           {
             title: "Pour qui ?",
-            content:
-              "Pour vous adultes, adolescents, couples, parents, professionnels, toute personne souhaitant se (re)connecter à elle-même à travers une approche intégrative, c’est-à-dire adaptée à chaque personne et à chaque histoire. Concernant l’accompagnement des enfants de moins de 11 ans, nous en discutons ensemble et si besoin, je réfère à des collègues spécialisés dans le Narbonnais. Cadre bienveillant, confidentiel et sans jugement.",
+            content: (
+              <>
+                <p>
+                  Pour vous adultes, adolescents, couples, parents,
+                  professionnels, toute personne souhaitant se{" "}
+                  <strong>(re)connecter</strong> à elle-même à travers une
+                  approche intégrative, c’est-à-dire adaptée à chaque personne
+                  et à chaque histoire. Concernant l’accompagnement des enfants
+                  de moins de 11 ans, nous en discutons ensemble et si besoin,
+                  je réfère à des collègues spécialisés dans le Narbonnais.
+                  <br />
+                  <strong>
+                    Cadre bienveillant, confidentiel et sans jugement.
+                  </strong>
+                </p>
+                <br />
+                <ul className="checkList">
+                  <li>✔ Gestion du stress et de la concentration</li>
+                  <li>
+                    ✔ Préparation sereine d&apos;une échéance : compétition,
+                    oral, examens…
+                  </li>
+                  <li>✔ Transformation du doute en confiance</li>
+                  <li>✔ Ancrage émotionnel</li>
+                  <li>✔ Clarté des objectifs</li>
+                  <li>✔ Récupération mentale et régulation émotionnelle</li>
+                  <li>✔ Mise en place de routines mentales efficaces</li>
+                  <li>✔ Travail sur son identité</li>
+                  <br />
+                  <li>
+                    <em>
+                      Liste non exhaustive, la seule limite c&apos;est vous !
+                    </em>
+                  </li>
+                </ul>
+                <br />
+                <p>
+                  Ici, <strong>pas de discours motivants</strong>, mais des{" "}
+                  <strong>outils concrets</strong>, des{" "}
+                  <strong>mises en situation</strong>, et un vrai travail
+                  d&apos;adaptation à votre personnalité.
+                </p>
+              </>
+            ),
           },
           {
             title: "En quoi la psychothérapie peut aider :",
@@ -35,8 +77,39 @@ tous vos efforts ?"
           },
           {
             title: "Comment ça se passe ?",
-            content:
-              "Retrouver de la clarté, du calme, de la confiance, du sens et du souffle.La psychothérapie, ce n'est pas parler pour parler. C’est explorer pour se libérer, comprendre pour avancer, oser être soi.",
+            content: (
+              <>
+                <p>
+                  Retrouver de la clarté, du calme, de la confiance, du sens et
+                  du souffle.La psychothérapie, ce n&apos;est pas parler pour
+                  parler. C&apos;est explorer pour se libérer, comprendre pour
+                  avancer, oser être soi.
+                </p>
+                <br />
+                <p>Acancez à votre rythme :</p>
+                <br />
+                <ul className="checkList">
+                  <li>✔ Prise de contact par téléphone, sms ou mail</li>
+                  <li>
+                    ✔ Accueil première séance : on fait le point sur votre
+                    situation et vos besoins
+                  </li>
+                  <li>
+                    ✔ On définit ensemble votre objectif (souple, évolutif)
+                  </li>
+                  <li>
+                    ✔ Vous pouvez arrêter à tout moment si ce n’est plus juste
+                    pour vous
+                  </li>
+                </ul>
+                <br />
+                <p>
+                  <strong>Remboursement :</strong> <br />
+                  Certaines mutuelles prennent en charge une partie des séances
+                  selon vos contrats.
+                </p>
+              </>
+            ),
           },
         ]}
         cta={{ label: "Me contacter", href: "/contact" }}
@@ -81,7 +154,7 @@ tous vos efforts ?"
       <div className={styles.buttonWrapper}>
         {" "}
         <Link href="/contact" className={styles.button}>
-          Je souhaite en parler{" "}
+          Prendre contact{" "}
           <span className={styles.icon}>
             <FiArrowRight />
           </span>
@@ -96,7 +169,7 @@ tous vos efforts ?"
       <Quote>
         “La psychothérapie aide à comprendre et apaiser. La préparation mentale
         aide à se dépasser et performer. Deux approches complémentaires, deux
-        tarifs adaptés à leur spécificité.” <br />
+        offres adaptés à leur spécificité.” <br />
         <br /> Julie Sanguinetti
       </Quote>
     </>

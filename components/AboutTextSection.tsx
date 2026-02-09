@@ -56,24 +56,35 @@ export default function AboutTextSection() {
               en hypnose, formateur PNL & hypnose et formateur en entreprise
               pour une communication bienveillante. Véritable pédagogue du lien
               humain, il m’a appris à manier l’art du langage métaphorique, et à
-              faire de la parole un espace de liberté entre rire et émotions. Il
-              est aujourd’hui l’un de mes superviseurs.
+              faire de la parole un espace de liberté entre rire et émotions.
             </li>
             <li>
-              <strong>Formée à la psychopathologie clinique</strong> par Bruno
-              Dal Palu. Psychologue, psychothérapeute, docteur en psychanalyse,
-              conférencier et formateur, fondateur de l’éducation Bientraitante
-              et <strong>l’EmètAnalyse</strong>, une approche thérapeutique
+              <strong>
+                Formée à la psychopathologie clinique adulte & juvenile
+              </strong>{" "}
+              par <strong>Bruno Dal Palu.</strong> Psychologue,
+              psychothérapeute, docteur en psychanalyse, conférencier, formateur
+              et enseignant dans les universités d&apos;Avignon et
+              Aix-Marseille. Il est le fondateur de l’éducation Bientraitante et{" "}
+              <strong>l’EmètAnalyse</strong>, une approche thérapeutique
               intégrative qui vise à penser le symptôme non pas comme un ennemi
               absolu, mais comme une porte vers un réajustement (penser /
-              panser). Il est aussi un de mes superviseurs, formateur de
-              professionnels, et a notamment enseigné dans les universités
-              d’Avignon et Aix-Marseille.
+              panser).
             </li>
             <li>
               <strong>Formée à l’hypnose</strong>, que j’utilise quand les mots
               seuls n’ouvrent plus la porte aussi large que nécessaire et qu’ils
               ont besoin d’un coup de pouce de l’inconscient.
+            </li>
+            <li>
+              Je participe également aux séances de supervision, à minima deux
+              fois par mois avec deux spécialistes différents, pour garantir un
+              regard extérieur, une éthique, la qualité et la justesse de mes
+              accompagnements. Ceci ne s&apos;inscrit pas dans une démarche
+              d&apos;apprentissage, mais dans un espace d&apos;échange entre
+              professionnels. La supervision fait partie des pratiques
+              essentielles de tout thérapeute engagé et responsable travaillant
+              avec sens et sérieux.
             </li>
           </ul>
           <p className={styles.paragraph}>
@@ -118,25 +129,28 @@ export default function AboutTextSection() {
           <h2 className={styles.sectionTitle}>Ce qui m&apos;anime</h2>
           <p className={styles.paragraph}>
             J’aime les <strong>déclics.</strong> Les vrais. Ceux où les yeux
-            s’allument, où un sourire revient, où un poids tombe. J’aime quand
-            une personne réalise qu’elle peut faire autrement — même un tout
-            petit peu. J’aime voir les gens se dépasser, retrouver leur
-            puissance, leur calme, leur humour. J’aime voir un parent retrouver
-            le sourire, un enfant respirer en paix, un adulte sortir de sa zone
-            de confort — ne serait-ce que d’un pas. J’aime voir un humain
-            devenir finisher de ses propres batailles comme de sa propre course.
+            s’allument, où un sourire revient, où un{" "}
+            <strong>poids tombe</strong>. J’aime quand une personne{" "}
+            <strong>réalise qu’elle peut faire autrement</strong> — même un tout
+            petit peu. J’aime voir les gens se <strong>dépasser</strong>,
+            retrouver leur
+            <strong>puissance</strong>, leur calme, leur humour. J’aime voir un
+            parent retrouver le sourire, un enfant respirer en paix, un adulte
+            sortir de sa zone de confort — ne serait-ce que d’un pas. J’aime
+            voir un humain devenir finisher de ses propres batailles comme de sa
+            propre course.
           </p>
           <p className={styles.paragraph}>
-            Quand ça fait <em>clic</em>, je sais que je suis au bon endroit.
-            Quand ça fait <em>claque</em>, je sais qu’on avance. Sportive dans
-            l’âme, j’ai besoin que ça bouge. L’équitation, l’éthologie équine,
-            les randonnées, la course à pied, la pole dance, les expériences,
-            l’adrénaline… Véritable adepte des arts de la scène, des concerts,
-            des oeuvres artistiques et des découvertes en tout genre qui
-            nourrissent l’âme. Toutes ces expériences m’ont appris que le corps
-            en sait souvent plus long que la tête. Alors dans mes
-            accompagnements, on parle, oui — mais on respire, on ressent, on
-            agit aussi.
+            Quand ça fait <em>clic</em>, je sais que je suis au{" "}
+            <strong>bon endroit</strong>. Quand ça fait <em>claque</em>, je sais
+            qu’on avance. Sportive dans l’âme, j’ai besoin que ça bouge.
+            L’équitation, l’éthologie équine, les randonnées, la course à pied,
+            la pole dance, les expériences, l’adrénaline… Véritable adepte des
+            arts de la scène, des concerts, des oeuvres artistiques et des
+            découvertes en tout genre qui nourrissent l’âme. Toutes ces
+            expériences m’ont appris que le corps en sait souvent plus long que
+            la tête. Alors dans mes accompagnements, on parle, oui — mais{" "}
+            <strong>on respire, on ressent, on agit aussi.</strong>
           </p>
         </section>
         <section className={styles.section}>

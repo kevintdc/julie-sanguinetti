@@ -100,8 +100,8 @@ export default function AlternatingParagraphs() {
         </div>
         <div className={styles.image}>
           <Image
-            src="/images/quisuisje_accueil.png"
-            alt="Préparation mentale"
+            src="/images/quisuisje_accueil1.jpeg"
+            alt="Préparation mentale - Narbonne"
             width={600}
             height={400}
             className={styles.imageContent}

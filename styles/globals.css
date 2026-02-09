@@ -1,7 +1,8 @@
 @import "tailwindcss";
 @font-face {
   font-family: "Gliker";
-  src: url("/fonts/gliker/gliker-regular.ttf") format("ttf"),
+  src:
+    url("/fonts/gliker/gliker-regular.ttf") format("ttf"),
     url("/fonts/gliker/gliker-regular.woff") format("woff"),
     url("/fonts/gliker/gliker-regular.woff2") format("woff2"),
     url("/fonts/gliker/gliker-regular.eot") format("eot");
@@ -11,7 +12,8 @@
 }
 @font-face {
   font-family: "Didot";
-  src: url("/fonts/didot/GFSDidot-Regular.ttf") format("ttf"),
+  src:
+    url("/fonts/didot/GFSDidot-Regular.ttf") format("ttf"),
     url("/fonts/didot/GFSDidot-Regular .woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -64,4 +66,9 @@ body {
   background: var(--background);
   color: #333;
   font-family: Arial, Helvetica, sans-serif;
+}
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5rem;
+  }
 }
