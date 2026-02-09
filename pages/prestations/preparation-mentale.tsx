@@ -21,7 +21,7 @@ export default function PreparationMentale() {
                   La préparation mentale, c’est l’art de faire{" "}
                   <strong>la paix avec son mental</strong> quand il décide de
                   faire grève. C’est aussi apprendre à
-                  <strong>transformer</strong> le stress en allié, à canaliser
+                  <strong> transformer</strong> le stress en allié, à canaliser
                   ses émotions et à retrouver du <strong>plaisir</strong> dans
                   la <strong>performance</strong>. Repartez avec un mindset
                   aussi affûté qu’un couteau de boucher : précis, tranchant, et
