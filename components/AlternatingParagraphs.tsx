@@ -53,7 +53,7 @@ export default function AlternatingParagraphs() {
           />
         </div>
       </Link>
-      <Link href="/prestations/accompagnements" className={styles.block}>
+      <Link href="/prestations/autres" className={styles.block}>
         <div className={styles.text}>
           <h2>
             Autres accompagnements : Ateliers, entreprises, conférences &
