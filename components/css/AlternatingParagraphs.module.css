@@ -96,7 +96,9 @@
   .text {
     padding: 1rem;
   }
-
+  .image img {
+    height: 350px;
+  }
   .ctaHint {
     opacity: 1;
     transform: none;
