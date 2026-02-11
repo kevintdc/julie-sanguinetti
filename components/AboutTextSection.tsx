@@ -77,14 +77,20 @@ export default function AboutTextSection() {
               ont besoin d’un coup de pouce de l’inconscient.
             </li>
             <li>
-              Je participe également aux séances de supervision, à minima deux
-              fois par mois avec deux spécialistes différents, pour garantir un
-              regard extérieur, une éthique, la qualité et la justesse de mes
-              accompagnements. Ceci ne s&apos;inscrit pas dans une démarche
-              d&apos;apprentissage, mais dans un espace d&apos;échange entre
-              professionnels. La supervision fait partie des pratiques
-              essentielles de tout thérapeute engagé et responsable travaillant
-              avec sens et sérieux.
+              Je participe également aux séances de <strong>supervision</strong>
+              , à minima deux fois par mois avec deux spécialistes différents,
+              pour garantir un regard extérieur, une éthique, la qualité et la
+              justesse de mes accompagnements. Ceci ne s&apos;inscrit pas dans
+              une démarche d&apos;apprentissage, mais dans un espace
+              d&apos;échange entre professionnels. La supervision fait partie
+              des <strong>pratiques essentielles</strong> de tout thérapeute
+              engagé et responsable travaillant avec sens et sérieux.
+            </li>
+            <li>
+              Je nourris ma pratique par une{" "}
+              <strong>formation régulière</strong> : curieuse et jamais figée
+              sur mes acquis, je cherche toujours à apprendre, évoluer et
+              enrichir ma pratique.
             </li>
           </ul>
           <p className={styles.paragraph}>
@@ -134,7 +140,7 @@ export default function AboutTextSection() {
             <strong>réalise qu’elle peut faire autrement</strong> — même un tout
             petit peu. J’aime voir les gens se <strong>dépasser</strong>,
             retrouver leur
-            <strong>puissance</strong>, leur calme, leur humour. J’aime voir un
+            <strong> puissance</strong>, leur calme, leur humour. J’aime voir un
             parent retrouver le sourire, un enfant respirer en paix, un adulte
             sortir de sa zone de confort — ne serait-ce que d’un pas. J’aime
             voir un humain devenir finisher de ses propres batailles comme de sa

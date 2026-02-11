@@ -105,8 +105,8 @@ tous vos efforts ?"
                 <br />
                 <p>
                   <strong>Remboursement :</strong> <br />
-                  Certaines mutuelles prennent en charge une partie des séances
-                  selon vos contrats.
+                  Certaines mutuelles prennent en charge une partie ou la
+                  totalité des séances selon vos contrats.
                 </p>
               </>
             ),

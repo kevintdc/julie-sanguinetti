@@ -83,7 +83,8 @@ export default function PreparationMentale() {
                   <br />
                   <li>
                     <em>
-                      Liste non exhaustive, la seule limite c&apos;est vous !
+                      Liste non exhaustive, la seule limite c&apos;est la vôtre
+                      !
                     </em>
                   </li>
                 </ul>
@@ -138,10 +139,9 @@ export default function PreparationMentale() {
                 </p>
                 <br />
                 <p>
-                  Le règlement s&apos;effectue sur place, en espèces ou par
-                  virement. Si besoin, un paiement en plusieurs fois peut être
-                  proposé - l&apos;important, c&apos;est que la démarche reste
-                  fluide et sereine.
+                  Le règlement s&apos;effectue sur place. Si besoin, un paiement
+                  en plusieurs fois peut être proposé - l&apos;important,
+                  c&apos;est que la démarche reste fluide et sereine.
                 </p>
               </>
             ),

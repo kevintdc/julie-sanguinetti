@@ -184,10 +184,7 @@ export default function Autres() {
                 <br />
                 <p>
                   <strong>Tarifs :</strong>
-                </p>
-                <br />
-                <p>
-                  <strong>Sur devis</strong>, selon le nombre de participants,
+                  <strong> Sur devis</strong>, selon le nombre de participants,
                   la durée et le lieu. (Je ne vends pas du temps, mais de la
                   transformation)
                 </p>
@@ -272,9 +269,9 @@ export default function Autres() {
       </div>
       <br />
       <PrestationPage
-        title="Les formations — Possibilité QUALIOPI, me contacter"
+        title="Les formations "
         description="Ateliers collectifs animés par Julie Sanguinetti — partage, apprentissage et croissance personnelle."
-        heroText="TEXTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
+        heroText="Possibilité QUALIOPI, me contacter"
         heroImage={{
           src: "/images/autre-formation.jpg",
           alt: "Formation",

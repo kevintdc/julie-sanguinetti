@@ -6,7 +6,7 @@ export default function Services() {
     <PrestationPage
       title="Témoignages"
       description="Découvrez les avis et témoignages de clients ayant bénéficié des services de Julie Sanguinetti en psychothérapie et préparation mentale."
-      heroText="Des services adaptés à vos besoins"
+      heroText=""
       heroImage={{
         src: "/images/temoignage.jpg",
         alt: "Services complémentaires",

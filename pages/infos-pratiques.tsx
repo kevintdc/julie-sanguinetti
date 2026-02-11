@@ -106,8 +106,19 @@ export default function Services() {
         },
         {
           title: "Et sinon ?",
-          content:
-            "Ici, pas de baguette magique (malheureusement ), mais un espace où vous pouvez vous poser, vous comprendre, performer, et repartir un peu plus léger·ère, plus clair·e, plus fort·e. C’est déjà beaucoup.",
+          content: (
+            <>
+              <p>
+                Ici, pas de baguette magique (malheureusement ), mais un espace
+                où vous pouvez vous poser, vous comprendre, performer, et
+                repartir un peu plus léger·ère, plus clair·e, plus fort·e. C’est
+                déjà beaucoup. Et de mon côté, <strong>je m&apos;engage</strong>{" "}
+                à vous offrir le meilleur de mon savoir-faire, de mon
+                savoir-être et de mon expérience - quelle que soit la nature de
+                l&apos;accompagnement.
+              </p>
+            </>
+          ),
         },
       ]}
       cta={{ label: "Prendre contact", href: "/contact" }}
