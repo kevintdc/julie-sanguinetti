@@ -19,13 +19,15 @@ export default function AboutTextSection() {
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Mon parcours</h2>
           <p className={styles.paragraph}>
-            Avant d’écouter les humains, j’écoutais les animaux : j’exerçais la
-            profession d’<strong>auxiliaire spécialisée vétérinaire</strong>{" "}
-            pendant plusieurs années en clinique. C’est là que j’ai appris la
-            patience ( pas tout à fait encore super acquis, mais j’y travaille
-            !) , la lecture du non-verbal, l’écoute silencieuse, la résilience
-            bien qu’elle m’est été imposée très jeune. Des années passionnantes,
-            pleines de sens.
+            Avant d’accompagner les humains, j’ai longtemps accompagné les
+            animaux en tant qu’
+            <strong>auxiliaire spécialisée vétérinaire diplômée d’État</strong>.
+            Ce métier m’a façonnée : gérer l’urgence, observer l’invisible,
+            tenir le cap sous pression, être présente dans les moments
+            critiques, la résilience bien qu’elle m&apos;ait été imposée très
+            jeune. Des années passionnantes, pleines de sens. Aujourd’hui
+            j’accompagne les humains avec les mêmes ingrédients si ce n’est
+            plus.
           </p>
           <p className={styles.paragraph}>
             Aujourd’hui, j’accompagne les humains avec les mêmes ingrédients :
@@ -48,14 +50,10 @@ export default function AboutTextSection() {
                 Maîtrise en Programmation Neuro Linguistique certifiée RNCP
               </strong>
               , formée par <strong>Michel Rolion</strong>, auteur, enseignant et
-              formateur reconnu, passionné de langage et de l’humain. Sa
-              pédagogie, exigeante et bienveillante, m’a appris à manier la
-              précision de la PNL sans jamais perdre la profondeur du lien. Et
-              formée également par <strong>Fabien Martinet</strong>, praticien
-              en hypnose, formateur PNL & hypnose et formateur en entreprise
-              pour une communication bienveillante. Véritable pédagogue du lien
-              humain, il m’a appris à manier l’art du langage métaphorique, et à
-              faire de la parole un espace de liberté entre rire et émotions.
+              formateur reconnu, passionné de langage et de l’humain. Et formée
+              également par <strong>Fabien Martinet</strong>, praticien en
+              hypnose, formateur PNL & hypnose et formateur en entreprise pour
+              une communication bienveillante.
             </li>
             <li>
               <strong>
@@ -76,14 +74,29 @@ export default function AboutTextSection() {
               ont besoin d’un coup de pouce de l’inconscient.
             </li>
             <li>
-              Je participe également aux séances de <strong>supervision</strong>
-              , à minima deux fois par mois avec deux spécialistes différents,
-              pour garantir un regard extérieur, une éthique, la qualité et la
-              justesse de mes accompagnements. Ceci ne s&apos;inscrit pas dans
-              une démarche d&apos;apprentissage, mais dans un espace
-              d&apos;échange entre professionnels. La supervision fait partie
-              des <strong>pratiques essentielles</strong> de tout thérapeute
-              engagé et responsable travaillant avec sens et sérieux.
+              <strong>Approfondissement en préparation mentale,</strong> nourri
+              par l’étude structurée de la méthode Target (Christian Target),une
+              approche universitaire enseignée et reconnue depuis de nombreuses
+              années et par les ressources professionnelles de la SFPM. (Société
+              Française de Préparation Mentale).
+            </li>
+            <li>
+              <strong>
+                Titre professionnel Formateur Professionnel d’Adultes
+              </strong>
+              <em> (RNCP 37275)</em> - conception et animation de parcours de
+              formation - en cours
+            </li>
+            <li>
+              Je participe régulièrement aux séances de{" "}
+              <strong>supervision</strong>
+              avec des spécialistes différents, pour garantir un regard
+              extérieur, une éthique, la qualité et la justesse de mes
+              accompagnements. Ceci ne s&apos;inscrit pas dans une démarche
+              d&apos;apprentissage, mais dans un espace d&apos;échange entre
+              professionnels. La supervision fait partie des{" "}
+              <strong>pratiques essentielles</strong> de tout thérapeute engagé
+              et responsable travaillant avec sens et sérieux.
             </li>
             <li>
               Je nourris ma pratique par une{" "}
