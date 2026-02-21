@@ -45,8 +45,7 @@ export default function AboutTextSection() {
           <ul className={styles.list}>
             <li>
               <strong>
-                Maître‑Praticienne certifiée RNCP en Programmation Neuro
-                Linguistique
+                Maîtrise en Programmation Neuro Linguistique certifiée RNCP
               </strong>
               , formée par <strong>Michel Rolion</strong>, auteur, enseignant et
               formateur reconnu, passionné de langage et de l’humain. Sa

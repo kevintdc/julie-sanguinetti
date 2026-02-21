@@ -9,7 +9,7 @@ export default function Autres() {
       <PrestationPage
         title="Ateliers collectifs"
         description="Ateliers collectifs animés par Julie Sanguinetti — partage, apprentissage et croissance personnelle."
-        heroText="Vous souhaitez explorer des thématiques spécifiques en groupe, partager vos expériences et apprendre dans un cadre bienveillant ?"
+        heroText="Parce qu’on est pas tout seul à douter et à tourner en boucle…"
         heroImage={{
           src: "/images/atelier1.jpg",
           alt: "Psychothérapie",
@@ -17,7 +17,7 @@ export default function Autres() {
         sections={[
           {
             title:
-              "Envie d’un moment pour souffler, apprendre, échanger (et rire un peu) ?",
+              "Envie de souffler, d’apprendre, de comprendre (et de rire un peu) ?",
             content: (
               <>
                 <p>
@@ -36,7 +36,7 @@ export default function Autres() {
           {
             title: "Pour qui ?",
             content:
-              "Pour toutes les personnes curieuses, audacieuses, sensibles (et même celles qui ne le savent pas encore). Pour les âmes qui doutent, les esprits qui cogitent et les coeurs qui vibrent. Ici, on apprend à penser moins contre soi, et un peu plus pour soi. Aucune compétence requise, juste l’envie d’explorer.",
+              "Pour les personnes curieuses, sensibles, audacieuses… ou qui ont juste envie d’explorer et de comprendre ce qui se joue en elles.",
             image: {
               src: "/images/atelier2.jpg",
               alt: "Séance de psychothérapie",

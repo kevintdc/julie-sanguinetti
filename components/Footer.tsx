@@ -66,6 +66,9 @@ export default function Footer() {
         <Link href="/mentions-legales" className={styles.link}>
           Mentions légales
         </Link>
+        <Link href="/politiques-conf" className={styles.link}>
+          Politique de confidentialité
+        </Link>
         <a href="#top" className={styles.link}>
           Retour en haut ↑
         </a>

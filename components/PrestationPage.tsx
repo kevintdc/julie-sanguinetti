@@ -1,3 +1,4 @@
+import React, { useEffect, useId, useRef, useState } from "react";
 import styles from "../styles/Prestation.module.css";
 import CustomHead from "./CustomHead";
 import Link from "next/link";
@@ -35,10 +36,27 @@ export default function PrestationPage({
   sections,
   cta,
 }: Props) {
+  const [isOpen, setIsOpen] = useState(false);
+  const wrapRef = useRef<HTMLDivElement | null>(null);
+  const uid = useId();
+  const panelId = `sections-${uid}`;
+
+  // clic en dehors => ferme
+  useEffect(() => {
+    const handler = (e: PointerEvent) => {
+      const el = wrapRef.current;
+      if (!el) return;
+      if (!el.contains(e.target as Node)) setIsOpen(false);
+    };
+    document.addEventListener("pointerdown", handler);
+    return () => document.removeEventListener("pointerdown", handler);
+  }, []);
+
   return (
     <>
       <CustomHead title={title} description={description} />
 
+      {/* ✅ HERO toujours affiché */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <h1>{title}</h1>
@@ -51,48 +69,76 @@ export default function PrestationPage({
             width={800}
             height={450}
             layout="responsive"
+            priority
           />
         </div>
       </section>
 
-      {sections.map((section, index) =>
-        section.image ? (
-          <section key={index} className={styles.sectionAlt}>
-            <div className={styles.imageSide}>
-              <Image
-                src={section.image.src}
-                alt={section.image.alt}
-                width={600}
-                height={400}
-                layout="responsive"
-              />
-            </div>
-            <div className={styles.textSide}>
-              <h2>{section.title}</h2>
-              {typeof section.content === "string" ? (
-                <p>{section.content}</p>
-              ) : (
-                section.content
-              )}
+      {/* ✅ Toggle global : bouton blanc => ouvre/ferme toutes les sections */}
+      <div ref={wrapRef} className={styles.globalAccordionWrap}>
+        <button
+          type="button"
+          className={styles.globalAccordionHeader}
+          aria-expanded={isOpen}
+          aria-controls={panelId}
+          onClick={() => setIsOpen((v) => !v)}
+        >
+          <span className={styles.globalAccordionTitle}>
+            {isOpen ? "Masquer le contenu" : "Découvrir le contenu"}
+          </span>
+          <span className={styles.globalAccordionIcon} aria-hidden="true">
+            ▾
+          </span>
+        </button>
 
-              {cta && index === 0 && (
-                <Link href={cta.href} className={styles.ctaButton}>
-                  {cta.label}
-                </Link>
-              )}
-            </div>
-          </section>
-        ) : (
-          <section key={index} className={styles.section}>
-            <h2>{section.title}</h2>
-            {typeof section.content === "string" ? (
-              <p>{section.content}</p>
-            ) : (
-              section.content
+        <div
+          id={panelId}
+          className={`${styles.globalAccordionPanel} ${
+            isOpen ? styles.isOpen : ""
+          }`}
+        >
+          <div className={styles.globalAccordionInner}>
+            {sections.map((section, index) =>
+              section.image ? (
+                <section key={index} className={styles.sectionAlt}>
+                  <div className={styles.imageSide}>
+                    <Image
+                      src={section.image.src}
+                      alt={section.image.alt}
+                      width={600}
+                      height={400}
+                      layout="responsive"
+                    />
+                  </div>
+                  <div className={styles.textSide}>
+                    <h2>{section.title}</h2>
+                    {typeof section.content === "string" ? (
+                      <p>{section.content}</p>
+                    ) : (
+                      section.content
+                    )}
+
+                    {cta && index === 0 && (
+                      <Link href={cta.href} className={styles.ctaButton}>
+                        {cta.label}
+                      </Link>
+                    )}
+                  </div>
+                </section>
+              ) : (
+                <section key={index} className={styles.section}>
+                  <h2>{section.title}</h2>
+                  {typeof section.content === "string" ? (
+                    <p>{section.content}</p>
+                  ) : (
+                    section.content
+                  )}
+                </section>
+              ),
             )}
-          </section>
-        )
-      )}
+          </div>
+        </div>
+      </div>
     </>
   );
 }
