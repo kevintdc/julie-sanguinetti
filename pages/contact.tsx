@@ -38,7 +38,7 @@ export default function Contact() {
       />
 
       <GoogleReCaptchaProvider
-        reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+        reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE || ""}
       >
         <main>
           <ContactInfoSection />
