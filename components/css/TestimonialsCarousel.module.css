@@ -1,0 +1,84 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+
+.carousel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  flex: 1;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 22px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  min-height: 380px;
+  min-width: 300px;
+  transition: transform 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.text {
+  font-size: 0.95rem;
+  color: #444;
+  margin: 12px 0;
+  line-height: 1.6;
+}
+
+.name {
+  font-weight: 600;
+  color: #a24a3b;
+  margin-top: 8px;
+}
+
+.stars {
+  display: flex;
+  gap: 3px;
+}
+
+.starFilled {
+  color: #d79a10;
+  font-size: 18px;
+}
+
+.star {
+  color: #ddd;
+  font-size: 18px;
+}
+
+.arrow {
+  border: none;
+  background: #a24a3b;
+  color: white;
+  font-size: 26px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.arrow:hover {
+  background: #8b3d30;
+}
+
+/* mobile */
+@media (max-width: 900px) {
+  .carousel {
+    grid-template-columns: 1fr;
+  }
+
+  .arrow {
+    display: none;
+  }
+}
