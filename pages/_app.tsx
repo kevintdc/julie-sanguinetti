@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Layout>
 
       <Head>
-        <link rel="icon" href="/favicon1.ico" />
+        <link rel="icon" href="/public/favicon.ico" />
       </Head>
     </GoogleReCaptchaProvider>
   );

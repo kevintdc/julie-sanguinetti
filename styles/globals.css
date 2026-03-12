@@ -14,7 +14,7 @@
   font-family: "Didot";
   src:
     url("/fonts/didot/GFSDidot-Regular.ttf") format("ttf"),
-    url("/fonts/didot/GFSDidot-Regular .woff") format("woff");
+    url("/fonts/didot/GFSDidot-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
