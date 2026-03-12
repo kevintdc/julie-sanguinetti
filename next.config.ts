@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const ContentSecurityPolicy = `
+const cspHeader = `
   default-src 'self';
   script-src 'self' 'unsafe-inline' 'unsafe-eval'
     https://www.google.com
@@ -10,15 +10,19 @@ const ContentSecurityPolicy = `
   frame-src 'self'
     https://www.google.com
     https://recaptcha.google.com
-    https://maps.google.com;
+    https://maps.google.com
+    https://www.google.com/recaptcha/;
   connect-src 'self'
     https://www.google.com
     https://www.gstatic.com
-    https://maps.googleapis.com;
+    https://maps.googleapis.com
+    https://www.google.com/recaptcha/;
   img-src 'self' data: blob: https:;
   style-src 'self' 'unsafe-inline';
   font-src 'self' data:;
-`;
+`
+  .replace(/\s{2,}/g, " ")
+  .trim();
 
 const nextConfig: NextConfig = {
   async headers() {
@@ -28,7 +32,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Content-Security-Policy",
-            value: ContentSecurityPolicy.replace(/\s{2,}/g, " ").trim(),
+            value: cspHeader,
           },
         ],
       },
