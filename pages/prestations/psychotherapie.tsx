@@ -37,32 +37,6 @@ tous vos efforts ?"
                   </strong>
                 </p>
                 <br />
-                <ul className="checkList">
-                  <li>✔ Gestion du stress et de la concentration</li>
-                  <li>
-                    ✔ Préparation sereine d&apos;une échéance : compétition,
-                    oral, examens…
-                  </li>
-                  <li>✔ Transformation du doute en confiance</li>
-                  <li>✔ Ancrage émotionnel</li>
-                  <li>✔ Clarté des objectifs</li>
-                  <li>✔ Récupération mentale et régulation émotionnelle</li>
-                  <li>✔ Mise en place de routines mentales efficaces</li>
-                  <li>✔ Travail sur son identité</li>
-                  <br />
-                  <li>
-                    <em>
-                      Liste non exhaustive, la seule limite c&apos;est vous !
-                    </em>
-                  </li>
-                </ul>
-                <br />
-                <p>
-                  Ici, <strong>pas de discours motivants</strong>, mais des{" "}
-                  <strong>outils concrets</strong>, des{" "}
-                  <strong>mises en situation</strong>, et un vrai travail
-                  d&apos;adaptation à votre personnalité.
-                </p>
               </>
             ),
           },

@@ -21,7 +21,8 @@ export default function MentionsLegales() {
             <br />
             <strong>Julie Sanguinetti</strong>
             <br />
-            Psychothérapeute – Micro-entreprise
+            Praticienne en psychothérapie et préparation mentale –
+            Micro-entreprise
             <br />
             SIRET : 99213282900019
             <br />
