@@ -1,8 +1,17 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
+type RecaptchaResponse = {
+  success: boolean;
+  score?: number;
+  action?: string;
+  challenge_ts?: string;
+  hostname?: string;
+  "error-codes"?: string[];
+};
+
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Méthode non autorisée" });
@@ -16,12 +25,10 @@ export default async function handler(
     "g-recaptcha-response": token,
   } = req.body;
 
-  // 🛡 Anti-spam honeypot
   if (website) {
     return res.status(400).json({ error: "Bot détecté" });
   }
 
-  // 🛡 Vérification du token reCAPTCHA
   if (!token) {
     return res.status(400).json({ error: "Token reCAPTCHA manquant" });
   }
@@ -45,16 +52,27 @@ export default async function handler(
       body: params.toString(),
     });
 
-    const captchaData = await captchaRes.json();
+    const captchaData: RecaptchaResponse = await captchaRes.json();
 
-    if (!captchaData.success || captchaData.score < 0.5) {
-      return res
-        .status(400)
-        .json({ error: "Échec de la vérification reCAPTCHA" });
+    if (!captchaData.success) {
+      return res.status(400).json({
+        error: "Échec de la vérification reCAPTCHA",
+        details: captchaData["error-codes"] || [],
+      });
     }
 
-    // ✅ Si tout est OK, tu peux maintenant envoyer le mail
-    // TODO: Ajoute ici ta logique d’envoi (ex: nodemailer, SMTP, etc.)
+    if ((captchaData.score ?? 0) < 0.5) {
+      return res.status(400).json({ error: "Score reCAPTCHA trop faible" });
+    }
+
+    if (captchaData.action !== "contact_form") {
+      return res.status(400).json({ error: "Action reCAPTCHA invalide" });
+    }
+
+    if (!name || !email || !message) {
+      return res.status(400).json({ error: "Champs requis manquants" });
+    }
+
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error("Erreur reCAPTCHA:", err);

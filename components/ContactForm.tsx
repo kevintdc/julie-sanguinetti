@@ -14,11 +14,20 @@ export default function ContactForm({ onSubmit, status }: Props) {
     e.preventDefault();
     if (!formRef.current) return;
 
-    // ✅ Récupérer le token reCAPTCHA
-    const token = await executeRecaptcha?.("contact_form");
-    console.log("reCAPTCHA token:", token);
+    if (!executeRecaptcha) {
+      console.error("reCAPTCHA non initialisé");
+      return;
+    }
+
+    const token = await executeRecaptcha("contact_form");
+
+    if (!token) {
+      console.error("Token reCAPTCHA introuvable");
+      return;
+    }
+
     const formData = new FormData(formRef.current);
-    formData.append("g-recaptcha-response", token || "");
+    formData.append("g-recaptcha-response", token);
 
     onSubmit(formData);
   };
