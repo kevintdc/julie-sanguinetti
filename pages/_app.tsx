@@ -1,4 +1,3 @@
-// pages/_app.tsx
 import type { AppProps } from "next/app";
 import Layout from "../components/Layout";
 import "../styles/globals.css";
@@ -9,12 +8,6 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <GoogleReCaptchaProvider
       reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE!}
-      scriptProps={{
-        async: true,
-        defer: true,
-        appendTo: "head",
-        nonce: undefined,
-      }}
     >
       <Layout>
         <Component {...pageProps} />

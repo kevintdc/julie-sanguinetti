@@ -11,33 +11,39 @@ export default function ContactForm({ onSubmit, status }: Props) {
   const formRef = useRef<HTMLFormElement | null>(null);
   const { executeRecaptcha } = useGoogleReCaptcha();
   const [captchaReady, setCaptchaReady] = useState(false);
+  const [localError, setLocalError] = useState("");
 
   useEffect(() => {
-    if (executeRecaptcha) {
-      setCaptchaReady(true);
-    }
+    setCaptchaReady(typeof executeRecaptcha === "function");
   }, [executeRecaptcha]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLocalError("");
+
     if (!formRef.current) return;
 
-    if (!executeRecaptcha) {
-      console.error("reCAPTCHA non prêt");
+    if (typeof executeRecaptcha !== "function") {
+      setLocalError("Le contrôle anti-spam est encore en cours de chargement.");
       return;
     }
 
-    const token = await executeRecaptcha("contact_form");
+    try {
+      const token = await executeRecaptcha("contact_form");
 
-    if (!token) {
-      console.error("Token reCAPTCHA introuvable");
-      return;
+      if (!token) {
+        setLocalError("Impossible de valider le formulaire.");
+        return;
+      }
+
+      const formData = new FormData(formRef.current);
+      formData.append("g-recaptcha-response", token);
+
+      onSubmit(formData);
+    } catch (error) {
+      console.error("Erreur reCAPTCHA :", error);
+      setLocalError("Le contrôle anti-spam a échoué.");
     }
-
-    const formData = new FormData(formRef.current);
-    formData.append("g-recaptcha-response", token);
-
-    onSubmit(formData);
   };
 
   return (
@@ -90,6 +96,16 @@ export default function ContactForm({ onSubmit, status }: Props) {
             ? "Chargement..."
             : "Envoyer"}
       </button>
+
+      {localError && <p className={styles.error}>{localError}</p>}
+      {status === "success" && (
+        <p className={styles.success}>Message envoyé avec succès !</p>
+      )}
+      {status === "error" && (
+        <p className={styles.error}>
+          Erreur lors de l’envoi. Veuillez réessayer.
+        </p>
+      )}
     </form>
   );
 }
