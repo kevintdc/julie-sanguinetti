@@ -34,7 +34,7 @@ export default function CustomHead({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />*/}
 
-      <link rel="icon" href="/favicon1.ico" />
+      <link rel="icon" href="/favicon.ico" />
     </Head>
   );
 }
