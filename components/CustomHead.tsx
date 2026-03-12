@@ -11,7 +11,7 @@ export default function CustomHead({
   title,
   description,
   url = "https://juliesanguinetti.fr",
-  image = "/images/og-image.png",
+  image = "/images/og-image1.png",
 }: CustomHeadProps) {
   return (
     <Head>
