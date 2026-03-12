@@ -57,6 +57,10 @@ export default async function handler(
     return res.status(400).json({ error: "Email invalide" });
   }
 
+  if (safeName.length > 120) {
+    return res.status(400).json({ error: "Nom trop long" });
+  }
+
   if (safeMessage.length > 3000) {
     return res.status(400).json({ error: "Message trop long" });
   }
@@ -95,20 +99,23 @@ export default async function handler(
 
     const from =
       process.env.CONTACT_FROM_EMAIL || "contact@juliesanguinetti.fr";
-    const to = process.env.CONTACT_TO_EMAIL || "juliesanguinetti.pnl@gmail.com";
+    const adminTo =
+      process.env.CONTACT_TO_EMAIL || "juliesanguinetti.pnl@gmail.com";
 
-    const { error } = await resend.emails.send({
+    const adminEmail = await resend.emails.send({
       from: `Site Julie Sanguinetti <${from}>`,
-      to: [to],
+      to: [adminTo],
       replyTo: safeEmail,
       subject: `Nouveau message de contact - ${safeName}`,
       html: `
-        <div style="font-family: Arial, sans-serif; line-height: 1.6;">
+        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #222;">
           <h2>Nouveau message depuis le site</h2>
           <p><strong>Nom :</strong> ${escapeHtml(safeName)}</p>
           <p><strong>Email :</strong> ${escapeHtml(safeEmail)}</p>
           <p><strong>Message :</strong></p>
-          <p style="white-space: pre-wrap;">${escapeHtml(safeMessage)}</p>
+          <div style="padding: 12px; background: #f7f7f7; border-radius: 8px; white-space: pre-wrap;">
+            ${escapeHtml(safeMessage)}
+          </div>
         </div>
       `,
       text: `
@@ -122,9 +129,53 @@ ${safeMessage}
       `.trim(),
     });
 
-    if (error) {
-      console.error("Erreur Resend:", error);
-      return res.status(500).json({ error: "Erreur lors de l'envoi du mail" });
+    if (adminEmail.error) {
+      console.error("Erreur envoi admin:", adminEmail.error);
+      return res
+        .status(500)
+        .json({ error: "Erreur lors de l'envoi du mail admin" });
+    }
+
+    const confirmationEmail = await resend.emails.send({
+      from: `Julie Sanguinetti <${from}>`,
+      to: [safeEmail],
+      subject: "Votre message a bien été reçu",
+      html: `
+        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #222;">
+          <h2>Merci pour votre message</h2>
+          <p>Bonjour ${escapeHtml(safeName)},</p>
+          <p>
+            Votre message a bien été reçu. Je reviendrai vers vous dès que possible.
+          </p>
+          <p><strong>Récapitulatif de votre message :</strong></p>
+          <div style="padding: 12px; background: #f7f7f7; border-radius: 8px; white-space: pre-wrap;">
+            ${escapeHtml(safeMessage)}
+          </div>
+          <p style="margin-top: 24px;">
+            Bien à vous,<br />
+            Julie Sanguinetti
+          </p>
+        </div>
+      `,
+      text: `
+Bonjour ${safeName},
+
+Votre message a bien été reçu. Je reviendrai vers vous dès que possible.
+
+Récapitulatif de votre message :
+${safeMessage}
+
+Bien à vous,
+Julie Sanguinetti
+      `.trim(),
+    });
+
+    if (confirmationEmail.error) {
+      console.error("Erreur envoi confirmation:", confirmationEmail.error);
+      return res.status(500).json({
+        error:
+          "Le message a été reçu, mais l'email de confirmation n'a pas pu être envoyé.",
+      });
     }
 
     return res.status(200).json({ success: true });
