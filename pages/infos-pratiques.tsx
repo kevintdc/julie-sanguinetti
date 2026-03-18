@@ -19,8 +19,12 @@ export default function Services() {
               <p>
                 Les séances se déroulent dans mon cabinet, un lieu pensé pour
                 que l’on s’y sente bien, en confiance, sans chichi.
+                <br />
+                <br />
                 <strong>Adresse :</strong> 4, route de Ginestas, 11 120
-                MIREPEISSET Facile d’accès, avec stationnement à proximité{" "}
+                MIREPEISSET <br />
+                <br />
+                Facile d’accès, avec stationnement à proximité{" "}
                 <em>
                   (accès PMR, toilettes, café si vous êtes sympa, parking à
                   proximité)

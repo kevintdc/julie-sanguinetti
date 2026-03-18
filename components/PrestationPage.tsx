@@ -71,8 +71,8 @@ export default function PrestationPage({
               <Image
                 src={section.image.src}
                 alt={section.image.alt}
-                width={600}
-                height={400}
+                width={400}
+                height={350}
                 layout="responsive"
               />
             </div>

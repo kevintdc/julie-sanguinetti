@@ -77,7 +77,7 @@ export default function AboutTextSection() {
               <strong>Approfondissement en préparation mentale,</strong> nourri
               par l’étude structurée de la méthode Target (Christian Target),une
               approche universitaire enseignée et reconnue depuis de nombreuses
-              années et par les ressources professionnelles de la SFPM. (Société
+              années et par les ressources professionnelles de la SFPM (Société
               Française de Préparation Mentale).
             </li>
             <li>
@@ -89,7 +89,7 @@ export default function AboutTextSection() {
             </li>
             <li>
               Je participe régulièrement aux séances de{" "}
-              <strong>supervision</strong>
+              <strong>supervision </strong>
               avec des spécialistes différents, pour garantir un regard
               extérieur, une éthique, la qualité et la justesse de mes
               accompagnements. Ceci ne s&apos;inscrit pas dans une démarche
