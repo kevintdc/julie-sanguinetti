@@ -27,11 +27,21 @@ export default function Card({
 }: CardProps) {
   const [flipped, setFlipped] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setIsMobile(window.matchMedia("(max-width: 768px)").matches);
+      const media = window.matchMedia("(max-width: 768px)");
+      const update = () => setIsMobile(media.matches);
+
+      update();
+      media.addEventListener("change", update);
+      return () => media.removeEventListener("change", update);
     }
+  }, []);
+
+  useEffect(() => {
+    setMounted(true);
   }, []);
 
   const handleClick = () => {
@@ -40,9 +50,16 @@ export default function Card({
     }
   };
 
+  const closeCard = (e: React.MouseEvent | React.TouchEvent) => {
+    e.stopPropagation();
+    setFlipped(false);
+  };
+
   return (
     <div
-      className={`${styles.cardContainer} ${flipped ? styles.flipped : ""}`}
+      className={`${styles.cardContainer} ${flipped ? styles.flipped : ""} ${
+        isMobile ? styles.mobileCard : ""
+      } ${mounted ? styles.ready : ""}`}
       onClick={handleClick}
     >
       <div className={styles.card}>
@@ -55,13 +72,22 @@ export default function Card({
         </div>
 
         <div className={styles.back}>
-          <Image src={imageSrc} alt="" fill className={styles.backImage} />
+          <div className={styles.backImageWrap}>
+            <Image src={imageSrc} alt="" fill className={styles.backImage} />
+          </div>
+
           <div className={styles.backContent}>
             <h3 className={styles.title}>{title}</h3>
             <p className={styles.duration}>{overlayText}</p>
             <p className={styles.price}>{overlayText2}</p>
+
             <div className={styles.scrollableText}>{overlayText3}</div>
-            <Link href={href} className={styles.button}>
+
+            <Link
+              href={href}
+              className={styles.button}
+              onClick={(e) => e.stopPropagation()}
+            >
               {buttonText}
             </Link>
           </div>
